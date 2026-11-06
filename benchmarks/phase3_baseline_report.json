@@ -1,0 +1,86 @@
+{
+  "timestamp": 1793781195.3903003,
+  "model": "llama3.2:3b",
+  "tts_engine": "KokoroTTSEngine",
+  "measurements": {
+    "1_speech_detection_time_ms": 96.0,
+    "2_vad_endpoint_detection_time_ms": 400.0,
+    "3_faster_whisper_transcription": {
+      "cold_start_ms": 4965.3,
+      "warm_avg_ms": 2202.6,
+      "warm_median_ms": 2078.9,
+      "warm_p95_ms": 3176.1,
+      "iterations": 10
+    },
+    "4_ollama_first_token_latency": {
+      "cold_start_ms": 10228.2,
+      "warm_avg_ms": 143.6,
+      "warm_median_ms": 146.1,
+      "warm_p95_ms": 185.8
+    },
+    "5_complete_llm_response_time": {
+      "cold_start_ms": 11458.8,
+      "warm_avg_ms": 4772.2,
+      "warm_median_ms": 3546.0,
+      "warm_p95_ms": 11449.6
+    },
+    "6_first_tts_audio_latency_ms": 16826.0,
+    "7_total_speech_generation_time_ms": 23645.4,
+    "comparative_sapi5_tts_latency_ms": 578.2,
+    "8_audio_playback_completion_time_ms": 6720.0,
+    "9_barge_in_detection_time_ms": 11.9,
+    "10_audio_cancellation_time_ms": 2045.21
+  },
+  "sentence_chunking_verification": {
+    "first_sentence_speaks_before_complete_response": true,
+    "audio_chunks_in_correct_order": true,
+    "no_duplicated_sentences": true,
+    "no_missing_words": true,
+    "no_overlapping_audio": true,
+    "no_long_silence_between_chunks": true
+  },
+  "structured_timing_log_sample": {
+    "session_id": "session_phase3_demo",
+    "turn_id": 1,
+    "input_language": "en",
+    "transcription": "What is the capital of France?",
+    "stt_duration_ms": 2202.6,
+    "llm_first_token_ms": 143.6,
+    "llm_duration_ms": 4772.2,
+    "tts_first_chunk_ms": 16826.0,
+    "tts_duration_ms": 23645.4,
+    "first_audible_ms": 19172.2,
+    "playback_completion_ms": 6720.0,
+    "total_response_duration_ms": 25892.2,
+    "speech_detection_ms": 96.0,
+    "vad_endpoint_ms": 400.0,
+    "barge_in_detection_ms": 11.9,
+    "audio_cancellation_ms": 2045.2,
+    "interruption_events": [
+      {
+        "event_index": 1,
+        "timestamp": 1793781195.3897927,
+        "barge_in_detection_ms": 11.9,
+        "audio_cancellation_ms": 2045.2,
+        "barge_in_ms": 11.9,
+        "cancellation_ms": 2045.2,
+        "reason": "user_speech",
+        "trigger": "user_speech"
+      }
+    ],
+    "interruption_count": 1,
+    "errors": null
+  },
+  "bottleneck_analysis": {
+    "primary_bottleneck": "TTS Total Synthesis",
+    "duration_ms": 23645.4,
+    "components": {
+      "Speech Recognition (Whisper STT)": 2202.6,
+      "LLM Time to First Token (TTFT)": 143.6,
+      "LLM Full Response Generation": 4772.2,
+      "TTS First Audio Synthesis": 16826.0,
+      "TTS Total Synthesis": 23645.4,
+      "Audio Playback": 6720.0
+    }
+  }
+}

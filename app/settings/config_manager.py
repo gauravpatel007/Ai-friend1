@@ -11,7 +11,7 @@ import json
 import os
 from pathlib import Path
 import threading
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from platformdirs import user_data_dir
 from PySide6.QtCore import QObject, Signal
@@ -82,10 +82,17 @@ class ConfigManager(QObject):
 
         # Fallback minimal defaults if file cannot be read
         return {
-            "general": {"app_name": "AI Desktop Friend", "start_at_login": false},
+            "general": {"app_name": "AI Desktop Friend", "start_at_login": False, "debug": False},
             "pet": {"size": 120, "always_on_top": True},
-            "ai": {"model": "qwen3:1.7b", "personality": "friendly"},
+            "ai": {"model": "llama3.2:3b", "personality": "friendly"},
             "voice": {"enabled": False, "mode": "push_to_talk"},
+            "language": {
+                "response_language": "auto",
+                "response_format": "native",
+                "voice_output_language": "follow_response",
+                "specific_voice_language": "en",
+                "stt_language": "auto",
+            },
         }
 
     def load(self) -> None:
@@ -119,15 +126,23 @@ class ConfigManager(QObject):
             return self._save_internal(self._config_data)
 
     def _save_internal(self, data: Dict[str, Any]) -> bool:
-        """Atomic write to configuration file."""
+        """Atomic write to configuration file with retry on transient Windows file lock."""
+        import time
         try:
             self.config_path.parent.mkdir(parents=True, exist_ok=True)
             temp_path = self.config_path.with_suffix(".tmp")
             with open(temp_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             
-            # Atomic replace
-            temp_path.replace(self.config_path)
+            # Atomic replace (retry on Windows if transient file lock occurs)
+            for attempt in range(3):
+                try:
+                    temp_path.replace(self.config_path)
+                    break
+                except PermissionError:
+                    if attempt == 2:
+                        raise
+                    time.sleep(0.05)
             logger.debug("Successfully saved settings to %s", self.config_path)
             return True
         except Exception as e:
@@ -146,8 +161,14 @@ class ConfigManager(QObject):
                     return default
             return copy.deepcopy(current)
 
+    def get_category(self, category: str) -> Dict[str, Any]:
+        """Return all configuration key-values for a given category (e.g. 'voice', 'pet')."""
+        val = self.get(category, {})
+        return val if isinstance(val, dict) else {}
+
     def set(self, key_path: str, value: Any, auto_save: bool = True) -> bool:
         """Set setting using dot notation and optionally save immediately."""
+        changed = False
         with self._lock:
             keys = key_path.split(".")
             current = self._config_data
@@ -156,13 +177,46 @@ class ConfigManager(QObject):
                     current[k] = {}
                 current = current[k]
             
+            # Guard against redundant setting updates
+            if keys[-1] in current and current[keys[-1]] == value:
+                return True
+
             current[keys[-1]] = copy.deepcopy(value)
+            changed = True
 
-        # Notify outside lock to avoid potential deadlocks in signal handlers
-        self.setting_changed.emit(key_path, value)
+        if changed:
+            # Notify outside lock to avoid potential deadlocks in signal handlers
+            self.setting_changed.emit(key_path, value)
 
-        if auto_save:
-            return self.save()
+            if auto_save:
+                return self.save()
+        return True
+
+    def set_many(self, settings_dict: Dict[str, Any], auto_save: bool = True) -> bool:
+        """Set multiple configuration keys atomically with a single disk save and individual change signals."""
+        changed_keys: List[tuple[str, Any]] = []
+        with self._lock:
+            for key_path, value in settings_dict.items():
+                keys = key_path.split(".")
+                current = self._config_data
+                for k in keys[:-1]:
+                    if k not in current or not isinstance(current[k], dict):
+                        current[k] = {}
+                    current = current[k]
+
+                if keys[-1] in current and current[keys[-1]] == value:
+                    continue
+
+                current[keys[-1]] = copy.deepcopy(value)
+                changed_keys.append((key_path, value))
+
+            if auto_save and changed_keys:
+                self._save_internal(self._config_data)
+
+        # Notify outside lock to avoid deadlocks or re-entrant recursion
+        for key_path, value in changed_keys:
+            self.setting_changed.emit(key_path, value)
+
         return True
 
     def reset_to_defaults(self) -> bool:
@@ -178,3 +232,17 @@ class ConfigManager(QObject):
         """Return a copy of the entire configuration dictionary."""
         with self._lock:
             return copy.deepcopy(self._config_data)
+
+
+_instance: Optional[ConfigManager] = None
+_instance_lock = threading.Lock()
+
+
+def get_config_manager(config_path: Optional[Path | str] = None) -> ConfigManager:
+    """Return the global singleton ConfigManager instance."""
+    global _instance
+    with _instance_lock:
+        if _instance is None:
+            _instance = ConfigManager(config_path=config_path)
+        return _instance
+

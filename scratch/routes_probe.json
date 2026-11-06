@@ -1,0 +1,119 @@
+{
+  "/": {
+    "status": 200,
+    "length": 194768,
+    "final_url": "https://reelipse.com/",
+    "title": "Reelipse: Trending Movies &amp; TV Shows, New Releases, Verdicts &amp; Where to Watch",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Reelipse: Trending Movies &amp; TV Shows, New Releases, Verdicts &amp; Where to Watch</title><meta name=\"description\" content=\"What\u00e2\u0080\u0099s trending in movies and TV, what\u00e2\u0080\u0099s in cinemas and what\u00e2\u0080\u0099s coming soon, plus a quick verdict, post-credit answers, where to stream and movies like any film. Hollywood, Bollywood, South Indian, Korean and anime.\"><link rel=\"canonical\" href=\"https://reelipse.com/\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><"
+  },
+  "_links": {
+    "movie": [
+      "/movie/891621-wild-horse-nine",
+      "/movie/1384216-the-dog-stars",
+      "/movie/1058424-hope",
+      "/movie/1170608-dune-part-three",
+      "/movie/1465063-forgotten-island"
+    ],
+    "tv": [
+      "/tv/225385-black-doves",
+      "/tv/289517-dead-end-job",
+      "/tv/303044-campus-drivers",
+      "/tv/213375-visionquest",
+      "/tv/259909-dexter-resurrection"
+    ],
+    "mood": [
+      "/mood-matcher",
+      "/mood/feel-good",
+      "/mood/mind-bending",
+      "/mood/edge-of-seat",
+      "/mood/epic"
+    ],
+    "list": [
+      "/best",
+      "/best/best-movies-under-2-hours",
+      "/best/best-movies-of-all-time",
+      "/best/best-movies-with-twist-endings",
+      "/best/best-movies-based-on-true-stories"
+    ],
+    "watch_order": [
+      "/watch-order"
+    ]
+  },
+  "/discover": {
+    "status": 200,
+    "length": 42921,
+    "final_url": "https://reelipse.com/discover",
+    "title": "Discover Movies: Filter by Genre, Mood, Language, Decade &amp; Runtime | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Discover Movies: Filter by Genre, Mood, Language, Decade &amp; Runtime | Reelipse</title><meta name=\"description\" content=\"Filter every movie by genre, mood, language, decade, runtime and rating. Find family-safe films, short movies, new releases or films with post-credit scenes in seconds.\"><link rel=\"canonical\" href=\"https://reelipse.com/discover\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\""
+  },
+  "/tv": {
+    "status": 200,
+    "length": 130988,
+    "final_url": "https://reelipse.com/tv",
+    "title": "TV Shows: Trending Series, New Episodes, Seasons &amp; Where to Watch | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>TV Shows: Trending Series, New Episodes, Seasons &amp; Where to Watch | Reelipse</title><meta name=\"description\" content=\"Every TV show on TMDB: what\u00e2\u0080\u0099s trending, what has new episodes this week and the best series ever made. Seasons, episode guides, verdicts and where to stream, from Black Doves and Dead-End Job and Campus Drivers on.\"><link rel=\"canonical\" href=\"https://reelipse.com/tv\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link re"
+  },
+  "/movies-like": {
+    "status": 200,
+    "length": 57028,
+    "final_url": "https://reelipse.com/movies-like",
+    "title": "Movies Like Any Film: Find Similar Movies to Watch Next | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Movies Like Any Film: Find Similar Movies to Watch Next | Reelipse</title><meta name=\"description\" content=\"Find movies like any film you love. Search a title to see up to 30 similar movies, including Hindi and other Indian films, with the reason each one matches.\"><link rel=\"canonical\" href=\"https://reelipse.com/movies-like\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-"
+  },
+  "/movie-map": {
+    "status": 200,
+    "length": 117715,
+    "final_url": "https://reelipse.com/movie-map",
+    "title": "Movie Map AI: Explore How Films Connect | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Movie Map AI: Explore How Films Connect | Reelipse</title><meta name=\"description\" content=\"An interactive 3D map of films and the ones their viewers watch next. Start from what\u00e2\u0080\u0099s trending or search any film, then click to keep exploring.\"><link rel=\"canonical\" href=\"https://reelipse.com/movie-map\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-19"
+  },
+  "/watch-order": {
+    "status": 200,
+    "length": 72549,
+    "final_url": "https://reelipse.com/watch-order",
+    "title": "Movie Watch Order Guides: Franchises &amp; Cinematic Universes | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Movie Watch Order Guides: Franchises &amp; Cinematic Universes | Reelipse</title><meta name=\"description\" content=\"How to watch every franchise in the right order: The Dark Knight, Lord of the Rings, Harry Potter, Avengers, Dune, Baahubali, KGF, John Wick and more.\"><link rel=\"canonical\" href=\"https://reelipse.com/watch-order\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch"
+  },
+  "/mood-matcher": {
+    "status": 200,
+    "length": 66991,
+    "final_url": "https://reelipse.com/mood-matcher",
+    "title": "Mood Match AI: Movies for How You Actually Feel | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Mood Match AI: Movies for How You Actually Feel | Reelipse</title><meta name=\"description\" content=\"Heartbroken, burnt out, can\u00e2\u0080\u0099t sleep, villain era? Tell us how you really feel, in your own words or by tapping one of 33 moods, and get films that match it, or pull you out of it.\"><link rel=\"canonical\" href=\"https://reelipse.com/mood-matcher\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link"
+  },
+  "/best": {
+    "status": 200,
+    "length": 52142,
+    "final_url": "https://reelipse.com/best",
+    "title": "Best Movie Lists: Ranked by Genre, Language, Decade &amp; More | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Best Movie Lists: Ranked by Genre, Language, Decade &amp; More | Reelipse</title><meta name=\"description\" content=\"Ranked lists of the best movies by genre, language and decade, plus family movies, twist endings, true stories, films under 2 hours and post-credit scenes.\"><link rel=\"canonical\" href=\"https://reelipse.com/best\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-i"
+  },
+  "/pick": {
+    "status": 200,
+    "length": 51850,
+    "final_url": "https://reelipse.com/pick",
+    "title": "Pick a Movie for Me: AI Random Movie &amp; TV Show Picker by Mood &amp; Time | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Pick a Movie for Me: AI Random Movie &amp; TV Show Picker by Mood &amp; Time | Reelipse</title><meta name=\"description\" content=\"Can\u00e2\u0080\u0099t decide what to watch? Pick For Me AI picks a movie for you: hit one button and get one well-liked movie or show, with its runtime, finish time, age rating and where to stream it.\"><link rel=\"canonical\" href=\"https://reelipse.com/pick\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/m"
+  },
+  "/blend": {
+    "status": 200,
+    "length": 42713,
+    "final_url": "https://reelipse.com/blend",
+    "title": "Blend AI: Find Movies Like X and Y | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Blend AI: Find Movies Like X and Y | Reelipse</title><meta name=\"description\" content=\"Love two very different films? Blend them. Pick any two movies and find the films that sit between them, with the reason each one matches.\"><link rel=\"canonical\" href=\"https://reelipse.com/blend\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-192.png\"><link rel=\"s"
+  },
+  "/watchlist": {
+    "status": 200,
+    "length": 36990,
+    "final_url": "https://reelipse.com/watchlist",
+    "title": "Your Watchlist | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Your Watchlist | Reelipse</title><meta name=\"description\" content=\"Your private watchlist of films and shows, stored in your browser. Share your list with a link.\"><link rel=\"canonical\" href=\"https://reelipse.com/watchlist\"><meta name=\"robots\" content=\"noindex, follow\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-192.png\"><link rel=\"sitemap\" href="
+  },
+  "/browse": {
+    "status": 200,
+    "length": 43295,
+    "final_url": "https://reelipse.com/browse",
+    "title": "Browse Movies &amp; TV Shows by Genre, Mood, Language &amp; Decade | Reelipse",
+    "html_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Browse Movies &amp; TV Shows by Genre, Mood, Language &amp; Decade | Reelipse</title><meta name=\"description\" content=\"Browse every way into the catalogue: genres, moods, languages, decades, TV shows, franchises and ranked lists.\"><link rel=\"canonical\" href=\"https://reelipse.com/browse\"><meta name=\"theme-color\" content=\"#0b0a09\"><meta name=\"color-scheme\" content=\"dark\"><link rel=\"preload\" href=\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preload\" href=\"/_astro/instrument-serif-latin-400-normal.DnYpCC2O.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"preconnect\" href=\"https://image.tmdb.org\" crossorigin><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"manifest\" href=\"/manifest.webmanifest\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-192.png\"><link r"
+  }
+}

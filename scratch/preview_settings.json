@@ -1,0 +1,42 @@
+{
+  "general": {
+    "app_name": "AI Desktop Friend",
+    "start_at_login": false,
+    "minimize_to_tray": true,
+    "theme": "dark"
+  },
+  "pet": {
+    "character": "robot",
+    "size": 120,
+    "position_x": 1400,
+    "position_y": 635,
+    "always_on_top": true,
+    "click_through": false,
+    "opacity": 1.0,
+    "animation_fps": 30
+  },
+  "ai": {
+    "model": "qwen3:1.7b",
+    "companion_name": "Buddy",
+    "personality": "friendly",
+    "response_style": "concise",
+    "temperature": 0.7,
+    "max_tokens": 250,
+    "ollama_host": "http://127.0.0.1:11434"
+  },
+  "voice": {
+    "enabled": false,
+    "mode": "push_to_talk",
+    "microphone": "default",
+    "speaker": "default",
+    "tts_voice": "en_US-lessac-medium",
+    "voice_speed": 1.0,
+    "wake_word": "Hey Buddy",
+    "silence_threshold_ms": 1200
+  },
+  "privacy": {
+    "microphone_permission_granted": false,
+    "store_audio": false,
+    "local_storage_only": true
+  }
+}

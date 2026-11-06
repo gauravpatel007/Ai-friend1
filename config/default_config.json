@@ -3,11 +3,13 @@
     "app_name": "AI Desktop Friend",
     "start_at_login": false,
     "minimize_to_tray": true,
-    "theme": "dark"
+    "theme": "dark",
+    "debug": false,
+    "show_tray_notifications": true
   },
   "pet": {
     "character": "robot",
-    "size": 120,
+    "size": 150,
     "position_x": null,
     "position_y": null,
     "always_on_top": true,
@@ -16,25 +18,86 @@
     "animation_fps": 30
   },
   "ai": {
-    "model": "qwen3:1.7b",
+    "model": "llama3.2:latest",
     "companion_name": "Buddy",
-    "personality": "friendly, helpful, concise companion",
-    "response_length": "concise",
-    "ollama_host": "http://127.0.0.1:11434"
+    "personality": "friendly",
+    "persona_voice_map": {
+      "friendly": "arjun",
+      "calm": "kabir",
+      "funny": "zara",
+      "energetic": "zara",
+      "professional": "kabir",
+      "creative": "ananya",
+      "playful": "zara",
+      "concise": "kabir",
+      "academic": "kabir",
+      "custom": "ananya"
+    },
+    "response_style": "concise",
+    "temperature": 0.7,
+    "max_tokens": 250,
+    "ollama_host": "http://127.0.0.1:11434",
+    "fast_greeting_enabled": true,
+    "auto_model_routing": true,
+    "model_selection_mode": "auto",
+    "response_priority": "balanced",
+    "task_preferred_models": {
+      "general_conversation": "auto",
+      "complex_reasoning": "auto",
+      "coding": "auto",
+      "document_summarization": "auto",
+      "vision": "auto"
+    },
+    "offline_fallback": true
   },
   "voice": {
-    "enabled": false,
-    "mode": "push_to_talk",
+    "enabled": true,
+    "mode": "wake_word",
     "microphone": "default",
     "speaker": "default",
-    "tts_voice": "en_US-lessac-medium",
+    "whisper_model": "base",
+    "language": "auto",
+    "selected_profile": "arjun",
+    "tts_engine": "kokoro",
+    "tts_voice": "am_adam",
     "voice_speed": 1.0,
-    "wake_word": "Hey Buddy",
-    "silence_threshold_ms": 1200
+    "wake_word": "Hey Bond",
+    "wake_word_enabled": true,
+    "auto_return_to_sleep": true,
+    "autonomous_messages": false,
+    "wake_timeout_sec": 6.0,
+    "silence_threshold_ms": 400,
+    "notify_on_empty_speech": false
   },
   "privacy": {
     "microphone_permission_granted": false,
     "store_audio": false,
     "local_storage_only": true
+  },
+  "memory": {
+    "enabled": true,
+    "auto_extract_enabled": true,
+    "max_context_memories": 5,
+    "max_context_summaries": 3
+  },
+  "performance": {
+    "profile": "balanced",
+    "idle_unload_minutes": 5,
+    "model_keep_alive": "5m",
+    "cache_animation_frames": true,
+    "pause_when_hidden": true
+  },
+  "movies": {
+    "image_base_url": "https://image.tmdb.org/t/p",
+    "timeout_sec": 10.0,
+    "cache_ttl_hours": 24,
+    "recommendation_model": "llama3.2:3b"
+  },
+  "language": {
+    "response_language": "auto",
+    "response_format": "native",
+    "voice_output_language": "follow_response",
+    "specific_voice_language": "en",
+    "stt_language": "auto"
   }
 }

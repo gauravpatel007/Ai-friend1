@@ -1,0 +1,271 @@
+{
+  "timestamp": 1793612578.6950543,
+  "model": "llama3.2:3b",
+  "prompts": [
+    "What is the capital of France and what is it famous for?",
+    "How does gravity work in simple terms?",
+    "Tell me a fun fact about space exploration.",
+    "What are three healthy habits for better daily focus?",
+    "Can you explain the difference between speed and velocity?",
+    "Why is the sky blue during the day and red at sunset?",
+    "Give me a quick two-sentence motivational quote for today.",
+    "How do airplanes stay in the air?",
+    "What is the fastest animal on earth and how fast can it run?",
+    "Tell me one interesting fact about the human brain."
+  ],
+  "before_baseline": {
+    "text": {
+      "cold_start": {
+        "first_visible_token_ms": 585.3081999998722,
+        "complete_response_ms": 8784.89720000016
+      },
+      "warm": {
+        "iterations": 10,
+        "avg_time_to_first_token_ms": 477.2855300000174,
+        "avg_complete_response_ms": 8322.806769999943,
+        "median_response_ms": 8655.399450000004,
+        "p95_response_ms": 14988.837719999809,
+        "min_response_ms": 1337.6963999999134,
+        "max_response_ms": 15470.445899999959
+      }
+    },
+    "voice": {
+      "cold_start": {
+        "stt_duration_ms": 21624.62960000039,
+        "eos_to_first_llm_token_ms": 31998.310200000105,
+        "eos_to_first_audible_ms": 32681.039200000214,
+        "complete_response_ms": 40759.589600000254
+      },
+      "warm": {
+        "iterations": 10,
+        "avg_speech_recognition_ms": 6269.566189999932,
+        "avg_eos_to_first_llm_token_ms": 7395.440529999951,
+        "avg_eos_to_first_audible_ms": 8167.721949999987,
+        "avg_complete_response_ms": 14642.851569999902,
+        "median_response_ms": 12355.59209999974,
+        "p95_response_ms": 27705.631924999816,
+        "min_response_ms": 7278.239000000212,
+        "max_response_ms": 32983.27579999977
+      }
+    },
+    "component_breakdown": {
+      "Speech Recognition (Faster-Whisper STT)": 6269.566189999932,
+      "LLM Time-To-First-Token (Ollama llama3.2:3b)": 477.2855300000174,
+      "LLM Full Generation Stream": 7845.5212399999255,
+      "TTS Speech Synthesis (Audio Generation)": 4456.980280000153
+    }
+  },
+  "after_optimized": {
+    "text": {
+      "iterations": 10,
+      "avg_time_to_first_token_ms": 1383.4261799999695,
+      "avg_complete_response_ms": 2301.3651699998263,
+      "median_response_ms": 1143.7220999996498,
+      "p95_response_ms": 7878.752234999853,
+      "min_response_ms": 739.7458999994342,
+      "max_response_ms": 13240.428299999621
+    },
+    "voice": {
+      "iterations": 10,
+      "avg_speech_recognition_ms": 3215.6287300002077,
+      "avg_eos_to_first_llm_token_ms": 3479.0338800000427,
+      "avg_eos_to_first_audible_ms": 3930.67357000009,
+      "avg_complete_response_ms": 4556.312310000067,
+      "median_response_ms": 4088.0018500001825,
+      "p95_response_ms": 7122.445465000095,
+      "min_response_ms": 3512.5627000006716,
+      "max_response_ms": 9357.085300000108
+    },
+    "text_records": [
+      {
+        "iteration": 1,
+        "prompt": "What is the capital of France and what is it famous for?",
+        "first_visible_token_sec": 12.596805000000131,
+        "complete_response_sec": 13.240428299999621,
+        "response_chars": 134
+      },
+      {
+        "iteration": 2,
+        "prompt": "How does gravity work in simple terms?",
+        "first_visible_token_sec": 0.12082439999994676,
+        "complete_response_sec": 1.0334472999993523,
+        "response_chars": 224
+      },
+      {
+        "iteration": 3,
+        "prompt": "Tell me a fun fact about space exploration.",
+        "first_visible_token_sec": 0.13284850000036386,
+        "complete_response_sec": 0.9547314000001279,
+        "response_chars": 181
+      },
+      {
+        "iteration": 4,
+        "prompt": "What are three healthy habits for better daily focus?",
+        "first_visible_token_sec": 0.20303250000051776,
+        "complete_response_sec": 1.173532200000409,
+        "response_chars": 221
+      },
+      {
+        "iteration": 5,
+        "prompt": "Can you explain the difference between speed and velocity?",
+        "first_visible_token_sec": 0.10800089999975171,
+        "complete_response_sec": 1.3255926000001637,
+        "response_chars": 282
+      },
+      {
+        "iteration": 6,
+        "prompt": "Why is the sky blue during the day and red at sunset?",
+        "first_visible_token_sec": 0.1137165999998615,
+        "complete_response_sec": 1.1999478999996427,
+        "response_chars": 271
+      },
+      {
+        "iteration": 7,
+        "prompt": "Give me a quick two-sentence motivational quote for today.",
+        "first_visible_token_sec": 0.16920889999983046,
+        "complete_response_sec": 1.1628047999993214,
+        "response_chars": 200
+      },
+      {
+        "iteration": 8,
+        "prompt": "How do airplanes stay in the air?",
+        "first_visible_token_sec": 0.10026790000028996,
+        "complete_response_sec": 1.0587819000002128,
+        "response_chars": 213
+      },
+      {
+        "iteration": 9,
+        "prompt": "What is the fastest animal on earth and how fast can it run?",
+        "first_visible_token_sec": 0.1277338999998392,
+        "complete_response_sec": 1.1246393999999782,
+        "response_chars": 226
+      },
+      {
+        "iteration": 10,
+        "prompt": "Tell me one interesting fact about the human brain.",
+        "first_visible_token_sec": 0.16182319999916217,
+        "complete_response_sec": 0.7397458999994342,
+        "response_chars": 110
+      }
+    ],
+    "voice_records": [
+      {
+        "iteration": 1,
+        "prompt": "What is the capital of France and what is it famous for?",
+        "transcript": "What is the capital of France and what does it famous for?",
+        "stt_duration_sec": 8.136941100000513,
+        "eos_to_first_llm_token_sec": 8.41727340000034,
+        "eos_to_first_audible_sec": 8.813762100000531,
+        "complete_voice_sec": 9.357085300000108,
+        "total_tts_synthesis_sec": 0.5560388000003513,
+        "response_chars": 159
+      },
+      {
+        "iteration": 2,
+        "prompt": "How does gravity work in simple terms?",
+        "transcript": "How does gravity work in simple terms?",
+        "stt_duration_sec": 2.7507376000003205,
+        "eos_to_first_llm_token_sec": 3.045242400000461,
+        "eos_to_first_audible_sec": 3.4939095999998244,
+        "complete_voice_sec": 3.990475399999923,
+        "total_tts_synthesis_sec": 0.4679345000004105,
+        "response_chars": 170
+      },
+      {
+        "iteration": 3,
+        "prompt": "Tell me a fun fact about space exploration.",
+        "transcript": "Tell me a fun fact about space exploration.",
+        "stt_duration_sec": 2.3862017999999807,
+        "eos_to_first_llm_token_sec": 2.580866199999946,
+        "eos_to_first_audible_sec": 2.963698900000054,
+        "complete_voice_sec": 3.7587180000000444,
+        "total_tts_synthesis_sec": 0.6048097000002599,
+        "response_chars": 203
+      },
+      {
+        "iteration": 4,
+        "prompt": "What are three healthy habits for better daily focus?",
+        "transcript": "What are three healthy habits for better daily focus?",
+        "stt_duration_sec": 2.921564899999794,
+        "eos_to_first_llm_token_sec": 3.1458033999997497,
+        "eos_to_first_audible_sec": 3.5648629999996047,
+        "complete_voice_sec": 4.391219000000092,
+        "total_tts_synthesis_sec": 0.7214186000001064,
+        "response_chars": 248
+      },
+      {
+        "iteration": 5,
+        "prompt": "Can you explain the difference between speed and velocity?",
+        "transcript": "Can you explain the difference between speed and velocity?",
+        "stt_duration_sec": 2.666403000000173,
+        "eos_to_first_llm_token_sec": 2.997414999999819,
+        "eos_to_first_audible_sec": 3.4603359000002456,
+        "complete_voice_sec": 4.033704899999975,
+        "total_tts_synthesis_sec": 0.5668402999999671,
+        "response_chars": 163
+      },
+      {
+        "iteration": 6,
+        "prompt": "Why is the sky blue during the day and red at sunset?",
+        "transcript": "Why is the sky blue during their day and red at sunset?",
+        "stt_duration_sec": 2.6088393999998516,
+        "eos_to_first_llm_token_sec": 2.82858589999978,
+        "eos_to_first_audible_sec": 3.4802128000001176,
+        "complete_voice_sec": 4.342337600000064,
+        "total_tts_synthesis_sec": 0.8044275000002017,
+        "response_chars": 317
+      },
+      {
+        "iteration": 7,
+        "prompt": "Give me a quick two-sentence motivational quote for today.",
+        "transcript": "Give me a quick two sentence motivational quote for today.",
+        "stt_duration_sec": 2.95698640000046,
+        "eos_to_first_llm_token_sec": 3.237273599999753,
+        "eos_to_first_audible_sec": 3.6194321000002674,
+        "complete_voice_sec": 4.157570999999734,
+        "total_tts_synthesis_sec": 0.4922465000008742,
+        "response_chars": 167
+      },
+      {
+        "iteration": 8,
+        "prompt": "How do airplanes stay in the air?",
+        "transcript": "How do airplane stay in the air?",
+        "stt_duration_sec": 2.105608200000461,
+        "eos_to_first_llm_token_sec": 2.3497135000006892,
+        "eos_to_first_audible_sec": 2.9312250000002678,
+        "complete_voice_sec": 3.5125627000006716,
+        "total_tts_synthesis_sec": 0.4501068000008672,
+        "response_chars": 194
+      },
+      {
+        "iteration": 9,
+        "prompt": "What is the fastest animal on earth and how fast can it run?",
+        "transcript": "What is the fastest animal on Earth and how fast can it run?",
+        "stt_duration_sec": 2.5300845000001573,
+        "eos_to_first_llm_token_sec": 2.84604919999947,
+        "eos_to_first_audible_sec": 3.02676799999972,
+        "complete_voice_sec": 3.877150399999664,
+        "total_tts_synthesis_sec": 0.5040492999996786,
+        "response_chars": 172
+      },
+      {
+        "iteration": 10,
+        "prompt": "Tell me one interesting fact about the human brain.",
+        "transcript": "Tell me one interesting fact about the human brain.",
+        "stt_duration_sec": 3.0929204000003665,
+        "eos_to_first_llm_token_sec": 3.3421162000004188,
+        "eos_to_first_audible_sec": 3.9525283000002673,
+        "complete_voice_sec": 4.14229880000039,
+        "total_tts_synthesis_sec": 0.3571402000006856,
+        "response_chars": 140
+      }
+    ]
+  },
+  "performance_targets": {
+    "text_first_token_pass": true,
+    "text_completion_pass": true,
+    "voice_stt_pass": false,
+    "voice_first_audible_pass": false,
+    "voice_completion_pass": true
+  }
+}

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   OfflineBanner Component — Apple Sequoia & VisionOS Ambient Amber Frosted Glass
+   ========================================================================== */
+
+.hub-offline-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 20px 0;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 159, 10, 0.14) 0%,
+    rgba(255, 69, 58, 0.08) 100%
+  );
+  border: 1px solid rgba(255, 159, 10, 0.32);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  animation: hubBannerFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes hubBannerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hub-offline-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+
+.hub-offline-icon-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 159, 10, 0.22);
+  border: 1px solid rgba(255, 159, 10, 0.4);
+  color: #FF9F0A;
+  flex-shrink: 0;
+}
+
+.hub-offline-glyph {
+  color: #FF9F0A;
+}
+
+.hub-offline-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hub-offline-headline-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hub-offline-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF9F0A;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.hub-offline-pill {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: rgba(255, 159, 10, 0.18);
+  color: #FFD60A;
+  border: 1px solid rgba(255, 159, 10, 0.35);
+}
+
+.hub-offline-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #EBEBF5;
+  margin: 0;
+  opacity: 0.88;
+}
+
+.hub-offline-retry-hint {
+  font-size: 11.5px;
+  color: #FF453A;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.hub-offline-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hub-offline-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  background: rgba(255, 159, 10, 0.2);
+  border: 1px solid rgba(255, 159, 10, 0.4);
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hub-offline-retry-btn:hover:not(:disabled) {
+  background: rgba(255, 159, 10, 0.32);
+  border-color: rgba(255, 159, 10, 0.6);
+  transform: translateY(-1px);
+}
+
+.hub-offline-retry-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Stale badge on movie cards */
+.hub-stale-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 159, 10, 0.85);
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}

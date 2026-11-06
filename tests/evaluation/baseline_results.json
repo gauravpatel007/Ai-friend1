@@ -1,0 +1,1870 @@
+{
+  "summary": {
+    "total_queries": 45,
+    "intent_extraction_accuracy_pct": 88.89,
+    "reference_resolution_accuracy_pct": 100.0,
+    "avg_candidate_retrieval_count": 39.6,
+    "zero_result_rate_pct": 0.0,
+    "avg_relevant_results_in_top_5": 4.42,
+    "duplicate_rate_pct": 0.0,
+    "api_error_rate_pct": 0.0,
+    "avg_retrieval_time_ms": 1370.8,
+    "avg_total_recommendation_time_ms": 1499.1,
+    "category_breakdown": {
+      "Category A – Similar movies": {
+        "count": 7,
+        "intent_accurate_count": 7,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 33,
+        "avg_total_time_ms": 1824.4,
+        "intent_accuracy_pct": 100.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 4.71
+      },
+      "Category B – Genre discovery": {
+        "count": 6,
+        "intent_accurate_count": 6,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 25,
+        "avg_total_time_ms": 1643.5,
+        "intent_accuracy_pct": 100.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 4.17
+      },
+      "Category C – Mood discovery": {
+        "count": 6,
+        "intent_accurate_count": 6,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 30,
+        "avg_total_time_ms": 1420.0,
+        "intent_accuracy_pct": 100.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 5.0
+      },
+      "Category D – Regional cinema": {
+        "count": 5,
+        "intent_accurate_count": 4,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 25,
+        "avg_total_time_ms": 1711.9,
+        "intent_accuracy_pct": 80.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 5.0
+      },
+      "Category E – Plot-based discovery": {
+        "count": 6,
+        "intent_accurate_count": 6,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 23,
+        "avg_total_time_ms": 1146.9,
+        "intent_accuracy_pct": 100.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 3.83
+      },
+      "Category F – Complex requests": {
+        "count": 6,
+        "intent_accurate_count": 6,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 30,
+        "avg_total_time_ms": 1500.2,
+        "intent_accuracy_pct": 100.0,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 5.0
+      },
+      "Category G – Additional queries": {
+        "count": 9,
+        "intent_accurate_count": 5,
+        "zero_result_count": 0,
+        "top_5_relevant_total": 33,
+        "avg_total_time_ms": 1318.4,
+        "intent_accuracy_pct": 55.6,
+        "zero_result_pct": 0.0,
+        "avg_relevant_in_top_5": 3.67
+      }
+    },
+    "generated_at": "2026-11-03T16:35:16Z",
+    "system_version": "baseline_v0"
+  },
+  "granular_results": [
+    {
+      "id": "Q01",
+      "query": "Movies like Glass Onion.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1152.24,
+      "total_time_ms": 2929.77,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "Glass Onion: A Knives Out Mystery",
+        "genres": [
+          "Comedy",
+          "Crime",
+          "Mystery"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Knives Out",
+        "Psych: The Movie",
+        "The Thursday Murder Club",
+        "See How They Run",
+        "The Naked Gun: From the Files of Police Squad!"
+      ]
+    },
+    {
+      "id": "Q02",
+      "query": "Movies similar to Knives Out.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1090.29,
+      "total_time_ms": 1605.29,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "Knives Out",
+        "genres": [
+          "Comedy",
+          "Crime",
+          "Mystery"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Glass Onion: A Knives Out Mystery",
+        "Manhattan Murder Mystery",
+        "The Thursday Murder Club",
+        "Revenge of the Pink Panther",
+        "The Late Show"
+      ]
+    },
+    {
+      "id": "Q03",
+      "query": "Movies like Interstellar.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1124.06,
+      "total_time_ms": 1763.62,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "Interstellar",
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Science Fiction"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Planet of the Apes",
+        "A.I. Artificial Intelligence",
+        "Ad Astra",
+        "Doctor Who: Last Christmas",
+        "After Yang"
+      ]
+    },
+    {
+      "id": "Q04",
+      "query": "Movies like Inception.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1038.48,
+      "total_time_ms": 1681.36,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "Inception",
+        "genres": [
+          "Action",
+          "Science Fiction",
+          "Crime"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Minority Report",
+        "Double Team",
+        "Tenet",
+        "Gemini Man",
+        "RoboCop"
+      ]
+    },
+    {
+      "id": "Q05",
+      "query": "Movies like Shutter Island.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1078.76,
+      "total_time_ms": 1596.51,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "Shutter Island",
+        "genres": [
+          "Drama",
+          "Thriller",
+          "Mystery"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Devil in a Blue Dress",
+        "The Good Doctor",
+        "Stay",
+        "Misery",
+        "Escape from Alcatraz"
+      ]
+    },
+    {
+      "id": "Q06",
+      "query": "Movies like John Wick.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1098.27,
+      "total_time_ms": 1627.22,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "John Wick",
+        "genres": [
+          "Action",
+          "Thriller"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "John Wick: Chapter 2",
+        "The Girl From Hong Kong",
+        "Nobody",
+        "The Boondock Saints",
+        "Kill Bill: Vol. 2"
+      ]
+    },
+    {
+      "id": "Q07",
+      "query": "Movies similar to The Prestige.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1046.89,
+      "total_time_ms": 1567.2,
+      "extracted_intent": {
+        "intent_type": "similar_to",
+        "reference_title": "The Prestige",
+        "genres": [
+          "Drama",
+          "Mystery",
+          "Science Fiction"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Sense of an Ending",
+        "Transcendence",
+        "Fahrenheit 451",
+        "Agatha and the Midnight Murders",
+        "Birth"
+      ]
+    },
+    {
+      "id": "Q08",
+      "query": "Best psychological thrillers.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1982.72,
+      "total_time_ms": 1983.65,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Thriller",
+          "Science Fiction",
+          "Mystery"
+        ],
+        "mood": "mind_bending",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "mind_bending"
+        ]
+      },
+      "top_5_titles": [
+        "The Dark Knight",
+        "Obsession",
+        "Insidious: Out of the Further",
+        "Mutiny",
+        "Drive - The Pretenders"
+      ]
+    },
+    {
+      "id": "Q09",
+      "query": "Best detective mysteries.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2203.57,
+      "total_time_ms": 2204.5,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Crime",
+          "Comedy"
+        ],
+        "mood": "whodunit",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "whodunit"
+        ]
+      },
+      "top_5_titles": [
+        "True Detective",
+        "Columbo",
+        "Nocturne",
+        "Grimm",
+        "Detective Conan"
+      ]
+    },
+    {
+      "id": "Q10",
+      "query": "Mind-bending sci-fi movies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 0,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1427.47,
+      "total_time_ms": 1428.48,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Science Fiction",
+          "Mystery",
+          "Thriller"
+        ],
+        "mood": "mind_bending",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "mind_bending"
+        ]
+      },
+      "top_5_titles": [
+        "Project Hail Mary",
+        "Interstellar",
+        "Spider-Man: Brand New Day",
+        "Avengers: Endgame",
+        "Colony"
+      ]
+    },
+    {
+      "id": "Q11",
+      "query": "Dark crime thrillers.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2524.14,
+      "total_time_ms": 2525.0,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Crime",
+          "Thriller",
+          "Mystery"
+        ],
+        "mood": "dark_gritty",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "dark_gritty"
+        ]
+      },
+      "top_5_titles": [
+        "The Dark Knight",
+        "Luther",
+        "MobLand",
+        "Sherlock",
+        "The Mentalist"
+      ]
+    },
+    {
+      "id": "Q12",
+      "query": "Romantic comedies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1144.99,
+      "total_time_ms": 1145.82,
+      "extracted_intent": {
+        "intent_type": "genre",
+        "reference_title": null,
+        "genres": [
+          "Romance",
+          "Comedy"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Office",
+        "Mob Psycho 100",
+        "Malcolm in the Middle",
+        "Friends",
+        "Star vs. the Forces of Evil"
+      ]
+    },
+    {
+      "id": "Q13",
+      "query": "Survival movies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 572.59,
+      "total_time_ms": 573.41,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Thriller"
+        ],
+        "mood": "survival",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "survival"
+        ]
+      },
+      "top_5_titles": [
+        "Gangs of New York",
+        "Resident Evil",
+        "Fall 2: Deadpoint",
+        "Apocalypse Z: New World",
+        "Django Unchained"
+      ]
+    },
+    {
+      "id": "Q14",
+      "query": "Feel-good movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1209.07,
+      "total_time_ms": 1209.92,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance",
+          "Family"
+        ],
+        "mood": "feel_good",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "feel_good"
+        ]
+      },
+      "top_5_titles": [
+        "Forgotten Island",
+        "Toy Story 5",
+        "Coco",
+        "Runner",
+        "Coyote vs. Acme"
+      ]
+    },
+    {
+      "id": "Q15",
+      "query": "Movies for a cozy evening.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1301.87,
+      "total_time_ms": 1302.86,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance",
+          "Family",
+          "Animation"
+        ],
+        "mood": "cozy",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "feel_good",
+          "cozy"
+        ]
+      },
+      "top_5_titles": [
+        "Toy Story 5",
+        "Coco",
+        "Wildwood",
+        "Runner",
+        "Coyote vs. Acme"
+      ]
+    },
+    {
+      "id": "Q16",
+      "query": "Dark and gritty movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 653.25,
+      "total_time_ms": 654.14,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Crime",
+          "Thriller",
+          "Mystery"
+        ],
+        "mood": "dark_gritty",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "dark_gritty"
+        ]
+      },
+      "top_5_titles": [
+        "Obsession",
+        "Verity",
+        "The Dark Knight",
+        "The Cycle",
+        "Insidious: Out of the Further"
+      ]
+    },
+    {
+      "id": "Q17",
+      "query": "Spine-chilling horror.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1906.4,
+      "total_time_ms": 1907.28,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Horror",
+          "Mystery",
+          "Thriller"
+        ],
+        "mood": "spine_chilling",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "spine_chilling"
+        ]
+      },
+      "top_5_titles": [
+        "A Story of Derry",
+        "Other Mommy",
+        "Colony",
+        "Obsession",
+        "Coraline"
+      ]
+    },
+    {
+      "id": "Q18",
+      "query": "Adrenaline-rush action movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1398.03,
+      "total_time_ms": 1398.96,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Action",
+          "Thriller",
+          "Adventure"
+        ],
+        "mood": "adrenaline",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "adrenaline"
+        ]
+      },
+      "top_5_titles": [
+        "Bad Boys: Ride or Die",
+        "The Dark Knight",
+        "Spider-Man: Brand New Day",
+        "Runner",
+        "Avengers: Endgame"
+      ]
+    },
+    {
+      "id": "Q19",
+      "query": "Emotional tearjerkers.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2045.93,
+      "total_time_ms": 2046.81,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "mood": "emotional",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "emotional"
+        ]
+      },
+      "top_5_titles": [
+        "The Polygamist",
+        "Doing Life",
+        "Klara and the Sun",
+        "The Last of Us",
+        "The Intouchables"
+      ]
+    },
+    {
+      "id": "Q20",
+      "query": "Underrated Malayalam thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1977.73,
+      "total_time_ms": 1978.65,
+      "extracted_intent": {
+        "intent_type": "regional",
+        "reference_title": null,
+        "genres": [
+          "Thriller"
+        ],
+        "mood": null,
+        "language": "ml",
+        "region": "malayalam",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "underrated"
+        ]
+      },
+      "top_5_titles": [
+        "Manjummel Boys",
+        "Drishyam 2",
+        "Kishkindha Kaandam",
+        "Bramayugam",
+        "Ayyappanum Koshiyum"
+      ]
+    },
+    {
+      "id": "Q21",
+      "query": "Best Hindi psychological thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2383.7,
+      "total_time_ms": 2384.8,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Thriller",
+          "Science Fiction",
+          "Mystery"
+        ],
+        "mood": "mind_bending",
+        "language": "hi",
+        "region": "bollywood",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "mind_bending"
+        ]
+      },
+      "top_5_titles": [
+        "Dhurandhar",
+        "KILL",
+        "Mardaani 3",
+        "Gangs of Wasseypur - Part 1",
+        "Om Shanti Om"
+      ]
+    },
+    {
+      "id": "Q22",
+      "query": "Telugu period action movies.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1534.71,
+      "total_time_ms": 1535.66,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Action",
+          "History",
+          "Drama",
+          "War"
+        ],
+        "mood": "period_drama",
+        "language": "te",
+        "region": "telugu",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "period_drama"
+        ]
+      },
+      "top_5_titles": [
+        "RRR",
+        "Rangasthalam",
+        "Bāhubali: The Beginning",
+        "Eega",
+        "Devara: Part 1"
+      ]
+    },
+    {
+      "id": "Q23",
+      "query": "Tamil crime thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1717.22,
+      "total_time_ms": 1718.36,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Crime",
+          "Thriller"
+        ],
+        "mood": null,
+        "language": "ta",
+        "region": "tamil",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Vikram",
+        "Theri",
+        "Leo",
+        "Kuttram 23",
+        "Coolie"
+      ]
+    },
+    {
+      "id": "Q24",
+      "query": "Best Gujarati movies.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "intent_accurate": false,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 26,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 941.22,
+      "total_time_ms": 942.12,
+      "extracted_intent": {
+        "intent_type": "regional",
+        "reference_title": null,
+        "genres": [],
+        "mood": null,
+        "language": "gu",
+        "region": "gujarati",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Last Film Show",
+        "Vash",
+        "Chhello Divas",
+        "Vash Level 2",
+        "Hello"
+      ]
+    },
+    {
+      "id": "Q25",
+      "query": "Movies with unexpected endings.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1678.68,
+      "total_time_ms": 1679.63,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Drama",
+        "Anyone but You",
+        "Mutiny",
+        "Drive - The Pretenders",
+        "Clayface"
+      ]
+    },
+    {
+      "id": "Q26",
+      "query": "Movies with unreliable narrators.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 681.74,
+      "total_time_ms": 682.79,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Mulholland Drive",
+        "Black Swan",
+        "Men in Black II",
+        "Clayface",
+        "The Departed"
+      ]
+    },
+    {
+      "id": "Q27",
+      "query": "Movies about parallel universes.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1231.77,
+      "total_time_ms": 1232.7,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Avengers: Endgame",
+        "Dune: Part Two",
+        "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+        "Spider-Man: Brand New Day",
+        "Toy Story 5"
+      ]
+    },
+    {
+      "id": "Q28",
+      "query": "Movies involving time loops.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1211.78,
+      "total_time_ms": 1212.89,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Science Fiction",
+          "Mystery",
+          "Comedy"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Edge of Tomorrow",
+        "Men in Black 3",
+        "Interstellar",
+        "Back to the Future",
+        "Terminator 2: Judgment Day"
+      ]
+    },
+    {
+      "id": "Q29",
+      "query": "Movies with shocking plot twists.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 757.42,
+      "total_time_ms": 758.43,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Drama",
+        "Anyone but You",
+        "Mutiny",
+        "Drive - The Pretenders",
+        "Clayface"
+      ]
+    },
+    {
+      "id": "Q30",
+      "query": "Movies where reality is not what it seems.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 2,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1313.79,
+      "total_time_ms": 1314.77,
+      "extracted_intent": {
+        "intent_type": "plot_based",
+        "reference_title": null,
+        "genres": [
+          "Science Fiction",
+          "Mystery",
+          "Thriller"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Deadpool & Wolverine",
+        "Mutiny",
+        "Verity",
+        "The Matrix Resurrections",
+        "Avengers: Infinity War"
+      ]
+    },
+    {
+      "id": "Q31",
+      "query": "Underrated Indian psychological thrillers with unexpected endings.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2587.58,
+      "total_time_ms": 2588.8,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Thriller",
+          "Mystery",
+          "Drama",
+          "Science Fiction"
+        ],
+        "mood": "mind_bending",
+        "language": null,
+        "region": "indian",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "mind_bending",
+          "underrated"
+        ]
+      },
+      "top_5_titles": [
+        "Drishyam 2",
+        "Super Deluxe",
+        "Anniyan",
+        "Maharaja",
+        "Manjummel Boys"
+      ]
+    },
+    {
+      "id": "Q32",
+      "query": "Sci-fi movies similar to Interstellar but more emotional.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 791.08,
+      "total_time_ms": 792.38,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": "Interstellar",
+        "genres": [
+          "Science Fiction",
+          "Drama",
+          "Romance"
+        ],
+        "mood": "emotional",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "emotional"
+        ]
+      },
+      "top_5_titles": [
+        "Planet of the Apes",
+        "Doctor Who: Last Christmas",
+        "A.I. Artificial Intelligence",
+        "After Yang",
+        "Ad Astra"
+      ]
+    },
+    {
+      "id": "Q33",
+      "query": "Mystery movies with comedy and unexpected endings.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1098.71,
+      "total_time_ms": 1099.9,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Comedy",
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Drama",
+        "Anyone but You",
+        "Verity",
+        "Life Is Beautiful",
+        "Back to the Future"
+      ]
+    },
+    {
+      "id": "Q34",
+      "query": "Hollywood action movies from the 1990s.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1136.91,
+      "total_time_ms": 1137.8,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Action"
+        ],
+        "mood": null,
+        "language": "en",
+        "region": "hollywood",
+        "release_year_min": 1990,
+        "release_year_max": 1999,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Matrix",
+        "Terminator 2: Judgment Day",
+        "Heat",
+        "Tombstone",
+        "The Crow"
+      ]
+    },
+    {
+      "id": "Q35",
+      "query": "Feel-good Malayalam movies with strong storytelling.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1353.41,
+      "total_time_ms": 1354.44,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance",
+          "Family"
+        ],
+        "mood": "feel_good",
+        "language": "ml",
+        "region": "malayalam",
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "feel_good"
+        ]
+      },
+      "top_5_titles": [
+        "Premalu",
+        "Manjummel Boys",
+        "Bethlehem Kudumba Unit",
+        "Bramayugam",
+        "Sarvam Maya"
+      ]
+    },
+    {
+      "id": "Q36",
+      "query": "Psychological mysteries with an unreliable narrator and a shocking reveal.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2026.53,
+      "total_time_ms": 2027.77,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Thriller",
+          "Drama",
+          "Science Fiction"
+        ],
+        "mood": "mind_bending",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "mind_bending"
+        ]
+      },
+      "top_5_titles": [
+        "Love Between Lines",
+        "The Blacklist",
+        "NCIS: Los Angeles",
+        "Sherlock",
+        "The Mentalist"
+      ]
+    },
+    {
+      "id": "Q37",
+      "query": "Best movies released after 2020.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": false,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 553.62,
+      "total_time_ms": 554.61,
+      "extracted_intent": {
+        "intent_type": "time_period",
+        "reference_title": null,
+        "genres": [],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": 2021,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Spider-Man: Brand New Day",
+        "Wildwood",
+        "The Odyssey",
+        "LA BOLA NEGRA",
+        "Insidious: Out of the Further"
+      ]
+    },
+    {
+      "id": "Q38",
+      "query": "Underrated independent films.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": false,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 3,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 982.0,
+      "total_time_ms": 982.9,
+      "extracted_intent": {
+        "intent_type": "general",
+        "reference_title": null,
+        "genres": [],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "underrated"
+        ]
+      },
+      "top_5_titles": [
+        "The Way to the Heart",
+        "Batman: Knightfall Part 1: Knightfall",
+        "Nude",
+        "The 1st 13th Annual Fancy Anvil Awards Show Program Special: Live in Stereo",
+        "Stray Kids: The dominATE Experience"
+      ]
+    },
+    {
+      "id": "Q39",
+      "query": "Movies directed by Christopher Nolan.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": false,
+      "reference_resolved": true,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 3,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 622.79,
+      "total_time_ms": 1215.76,
+      "extracted_intent": {
+        "intent_type": "general",
+        "reference_title": "Christopher Nolan & Richard Donner: A Conversation",
+        "genres": [
+          "Documentary"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "The Dark Knight",
+        "Spider-Man: Brand New Day",
+        "Wildwood",
+        "Coco",
+        "The Odyssey"
+      ]
+    },
+    {
+      "id": "Q40",
+      "query": "Movies with intelligent detective protagonists.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 4,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1464.05,
+      "total_time_ms": 1465.1,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Crime",
+          "Comedy"
+        ],
+        "mood": "whodunit",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "whodunit"
+        ]
+      },
+      "top_5_titles": [
+        "Se7en",
+        "Heat",
+        "Knives Out",
+        "The Batman",
+        "Bride of Chucky"
+      ]
+    },
+    {
+      "id": "Q41",
+      "query": "Korean revenge thrillers with dark humor.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2336.69,
+      "total_time_ms": 2337.8,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Thriller",
+          "Action",
+          "Crime",
+          "Mystery"
+        ],
+        "mood": "dark_gritty",
+        "language": "ko",
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "dark_gritty"
+        ]
+      },
+      "top_5_titles": [
+        "Oldboy",
+        "I Saw the Devil",
+        "Project Wolf Hunting",
+        "Parasite",
+        "The Handmaiden"
+      ]
+    },
+    {
+      "id": "Q42",
+      "query": "Cyberpunk sci-fi movies with philosophical themes.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 3,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 771.37,
+      "total_time_ms": 772.85,
+      "extracted_intent": {
+        "intent_type": "genre",
+        "reference_title": null,
+        "genres": [
+          "Science Fiction"
+        ],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Project Hail Mary",
+        "Interstellar",
+        "Spider-Man: Brand New Day",
+        "Avengers: Endgame",
+        "Colony"
+      ]
+    },
+    {
+      "id": "Q43",
+      "query": "Spanish language mystery thrillers with twists.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 45,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 2287.1,
+      "total_time_ms": 2288.22,
+      "extracted_intent": {
+        "intent_type": "complex",
+        "reference_title": null,
+        "genres": [
+          "Mystery",
+          "Thriller"
+        ],
+        "mood": null,
+        "language": "es",
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Facing El Chapo",
+        "La promesa",
+        "Elite",
+        "Soy Luna",
+        "Rubí"
+      ]
+    },
+    {
+      "id": "Q44",
+      "query": "Classic animated movies from the 1980s.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": false,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 1,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 610.36,
+      "total_time_ms": 611.51,
+      "extracted_intent": {
+        "intent_type": "time_period",
+        "reference_title": null,
+        "genres": [],
+        "mood": null,
+        "language": null,
+        "region": null,
+        "release_year_min": 1980,
+        "release_year_max": 1989,
+        "keywords": []
+      },
+      "top_5_titles": [
+        "Back to the Future",
+        "Dead Poets Society",
+        "The Shining",
+        "Scarface",
+        "The Thing"
+      ]
+    },
+    {
+      "id": "Q45",
+      "query": "High-stakes financial and Wall Street thrillers.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "intent_accurate": true,
+      "reference_resolved": null,
+      "candidate_retrieval_count": 36,
+      "is_zero_result": false,
+      "top_5_relevant_count": 5,
+      "has_duplicates": false,
+      "duplicate_count": 0,
+      "api_error": false,
+      "error_type": null,
+      "retrieval_time_ms": 1635.82,
+      "total_time_ms": 1636.91,
+      "extracted_intent": {
+        "intent_type": "mood",
+        "reference_title": null,
+        "genres": [
+          "Thriller",
+          "Action",
+          "Adventure"
+        ],
+        "mood": "adrenaline",
+        "language": null,
+        "region": null,
+        "release_year_min": null,
+        "release_year_max": null,
+        "keywords": [
+          "adrenaline"
+        ]
+      },
+      "top_5_titles": [
+        "The Dark Knight",
+        "Obsession",
+        "Insidious: Out of the Further",
+        "Mutiny",
+        "Drive - The Pretenders"
+      ]
+    }
+  ]
+}

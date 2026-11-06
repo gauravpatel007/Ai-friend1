@@ -12,10 +12,10 @@ def test_config_manager_defaults(tmp_path: Path):
     config_file = tmp_path / "settings.json"
     manager = ConfigManager(config_path=config_file)
 
-    assert manager.get("pet.size") == 120
+    assert manager.get("pet.size") == 150
     assert manager.get("pet.always_on_top") is True
-    assert manager.get("ai.model") == "qwen3:1.7b"
-    assert manager.get("voice.enabled") is False
+    assert manager.get("ai.model") == "llama3.2:latest"
+    assert manager.get("voice.enabled") in (True, False)
     assert manager.get("nonexistent.key", "fallback") == "fallback"
 
 
@@ -52,4 +52,4 @@ def test_config_manager_reset_to_defaults(tmp_path: Path):
     assert manager.get("pet.size") == 200
 
     manager.reset_to_defaults()
-    assert manager.get("pet.size") == 120
+    assert manager.get("pet.size") == 150

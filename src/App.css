@@ -1,0 +1,303 @@
+/* ==========================================================================
+   App Component — Apple macOS Window Frame & Settings Sheet
+   ========================================================================== */
+
+.apple-window-frame {
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.apple-main-viewport {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.companion-workspace-view {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-hub-workspace-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.workspace-hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   macOS Settings Sheet Modal
+   ========================================================================== */
+
+.apple-modal-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: apple-fade-in 180ms ease-out;
+}
+
+.apple-settings-sheet {
+  width: 480px;
+  max-width: 92%;
+  background: rgba(34, 34, 38, 0.94);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-top-light);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-window);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: apple-sheet-enter 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sheet-header {
+  padding: 16px 20px 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sheet-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sheet-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sheet-title-icon {
+  color: var(--color-system-blue);
+}
+
+.sheet-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+}
+
+.sheet-subheading {
+  font-size: 11.5px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.005em;
+}
+
+.sheet-close-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  background: rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sheet-close-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--color-text-primary);
+}
+
+.sheet-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Apple Inset Grouped Table (Settings Style) */
+.apple-grouped-inset {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.grouped-setting-row {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.grouped-setting-row:last-child {
+  border-bottom: none;
+}
+
+.grouped-setting-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.setting-label-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.setting-block-icon {
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.label-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.setting-main-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.005em;
+}
+
+.setting-help-caption {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.005em;
+}
+
+.grouped-text-input,
+.grouped-select-input {
+  width: 210px;
+  height: 32px;
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  color: var(--color-text-primary);
+  font-size: 12.5px;
+  letter-spacing: -0.005em;
+  transition: all var(--transition-fast);
+}
+
+.grouped-text-input:focus,
+.grouped-select-input:focus {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--color-border-focused);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.2);
+}
+
+.grouped-select-input option {
+  background: #1C1C1E;
+  color: #F5F5F7;
+}
+
+.sheet-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  background: rgba(24, 24, 28, 0.45);
+}
+
+.btn-sheet-cancel {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  transition: all var(--transition-fast);
+}
+
+.btn-sheet-cancel:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-primary);
+}
+
+.btn-sheet-save {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--color-system-blue);
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  box-shadow: var(--shadow-blue-subtle);
+  transition: all var(--transition-fast);
+}
+
+.btn-sheet-save:hover {
+  background: var(--color-system-blue-dark);
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
+}
+
+.save-icon-success {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Responsive Adaptations (WWDC Flexibility)
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .apple-inspector-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 40;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 720px) {
+  .apple-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 40;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .header-left .companion-meta {
+    display: none;
+  }
+}

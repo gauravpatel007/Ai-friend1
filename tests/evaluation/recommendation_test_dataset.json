@@ -1,0 +1,2398 @@
+{
+  "version": "1.0.0",
+  "description": "Bond Movie Hub Recommendation Evaluation Benchmark Dataset",
+  "total_queries": 45,
+  "categories": [
+    "Category A – Similar movies",
+    "Category B – Genre discovery",
+    "Category C – Mood discovery",
+    "Category D – Regional cinema",
+    "Category E – Plot-based discovery",
+    "Category F – Complex requests",
+    "Category G – Additional queries"
+  ],
+  "queries": [
+    {
+      "id": "Q01",
+      "query": "Movies like Glass Onion.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "Glass Onion",
+        "expected_genres": [
+          "Mystery",
+          "Comedy",
+          "Crime",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "whodunit",
+          "murder mystery",
+          "eccentric detective",
+          "investigation"
+        ],
+        "expected_plot_elements": [
+          "puzzle",
+          "island murder",
+          "clever deduction"
+        ],
+        "expected_moods": [
+          "witty",
+          "suspenseful",
+          "entertaining"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "ensemble cast",
+          "satirical tone",
+          "high production value"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q02",
+      "query": "Movies similar to Knives Out.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "Knives Out",
+        "expected_genres": [
+          "Mystery",
+          "Comedy",
+          "Crime",
+          "Drama"
+        ],
+        "expected_themes": [
+          "whodunit",
+          "family inheritance",
+          "mansion mystery",
+          "detective"
+        ],
+        "expected_plot_elements": [
+          "foul play",
+          "interrogation",
+          "unexpected will"
+        ],
+        "expected_moods": [
+          "clever",
+          "suspenseful",
+          "witty"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "classic mystery homage",
+          "clever plot structure"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q03",
+      "query": "Movies like Interstellar.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "Interstellar",
+        "expected_genres": [
+          "Science Fiction",
+          "Drama",
+          "Adventure"
+        ],
+        "expected_themes": [
+          "space exploration",
+          "time dilation",
+          "human survival",
+          "father-daughter bond"
+        ],
+        "expected_plot_elements": [
+          "wormhole",
+          "black hole",
+          "cosmic journey",
+          "relativity"
+        ],
+        "expected_moods": [
+          "epic",
+          "emotional",
+          "mind-bending",
+          "awe-inspiring"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "scientific grounding",
+          "grand musical score",
+          "philosophical depth"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q04",
+      "query": "Movies like Inception.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "Inception",
+        "expected_genres": [
+          "Action",
+          "Science Fiction",
+          "Thriller",
+          "Mystery"
+        ],
+        "expected_themes": [
+          "subconscious",
+          "dream within a dream",
+          "heist",
+          "reality distortion"
+        ],
+        "expected_plot_elements": [
+          "dream architecture",
+          "memory manipulation",
+          "totem"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "suspenseful",
+          "high-octane",
+          "intellectual"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "complex multi-layered plot",
+          "stunning visual effects"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q05",
+      "query": "Movies like Shutter Island.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "Shutter Island",
+        "expected_genres": [
+          "Drama",
+          "Mystery",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "psychological mystery",
+          "isolated asylum",
+          "unreliable narrator",
+          "paranoia"
+        ],
+        "expected_plot_elements": [
+          "missing patient",
+          "identity question",
+          "hallucinations",
+          "shocking twist"
+        ],
+        "expected_moods": [
+          "eerie",
+          "atmospheric",
+          "chilling",
+          "mind-bending"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "gothic atmosphere",
+          "psychological disorientation"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q06",
+      "query": "Movies like John Wick.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "John Wick",
+        "expected_genres": [
+          "Action",
+          "Thriller",
+          "Crime"
+        ],
+        "expected_themes": [
+          "assassin underworld",
+          "revenge",
+          "gun-fu",
+          "criminal syndicate"
+        ],
+        "expected_plot_elements": [
+          "continental hotel",
+          "excommunicado",
+          "martial arts choreography"
+        ],
+        "expected_moods": [
+          "adrenaline",
+          "relentless",
+          "stylish",
+          "gritty"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "practical stunt work",
+          "neon cinematography"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q07",
+      "query": "Movies similar to The Prestige.",
+      "category": "Category A – Similar movies",
+      "category_key": "similar_movies",
+      "expected_intent": {
+        "intent_types": [
+          "similar_to",
+          "complex"
+        ],
+        "reference_title": "The Prestige",
+        "expected_genres": [
+          "Drama",
+          "Mystery",
+          "Science Fiction",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "rival magicians",
+          "obsession",
+          "illusion",
+          "sacrificial secret"
+        ],
+        "expected_plot_elements": [
+          "teleportation trick",
+          "diary decoding",
+          "double identity"
+        ],
+        "expected_moods": [
+          "dark",
+          "mind-bending",
+          "obsessive",
+          "intriguing"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "period setting",
+          "intricate non-linear narrative"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q08",
+      "query": "Best psychological thrillers.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Mystery",
+          "Drama"
+        ],
+        "expected_themes": [
+          "psychological",
+          "mind games",
+          "paranoia",
+          "manipulation"
+        ],
+        "expected_plot_elements": [
+          "mental tension",
+          "hidden motives",
+          "plot twist"
+        ],
+        "expected_moods": [
+          "tense",
+          "suspenseful",
+          "dark",
+          "chilling"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "high critical acclaim",
+          "strong psychological conflict"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "query": "Best detective mysteries.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Crime",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "detective",
+          "investigation",
+          "crime solving",
+          "whodunit"
+        ],
+        "expected_plot_elements": [
+          "clues",
+          "suspects",
+          "police procedural",
+          "deduction"
+        ],
+        "expected_moods": [
+          "intriguing",
+          "suspenseful",
+          "cerebral"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "clever protagonist",
+          "tight mystery plotting"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "query": "Mind-bending sci-fi movies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "mood",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Science Fiction",
+          "Mystery",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "mind-bending",
+          "time travel",
+          "simulation",
+          "existentialism"
+        ],
+        "expected_plot_elements": [
+          "reality questioned",
+          "temporal paradox",
+          "advanced physics"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "surreal",
+          "cerebral"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "high concept",
+          "philosophical ideas"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "query": "Dark crime thrillers.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Crime",
+          "Thriller",
+          "Drama",
+          "Mystery"
+        ],
+        "expected_themes": [
+          "underworld",
+          "corruption",
+          "serial killer",
+          "neo-noir"
+        ],
+        "expected_plot_elements": [
+          "brutality",
+          "moral ambiguity",
+          "gritty investigation"
+        ],
+        "expected_moods": [
+          "dark",
+          "gritty",
+          "tense",
+          "bleak"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "atmospheric cinematography",
+          "complex moral shades"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q12",
+      "query": "Romantic comedies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Romance",
+          "Comedy"
+        ],
+        "expected_themes": [
+          "love",
+          "dating",
+          "misunderstandings",
+          "meet-cute"
+        ],
+        "expected_plot_elements": [
+          "humor",
+          "courtship",
+          "happy ending"
+        ],
+        "expected_moods": [
+          "lighthearted",
+          "feel-good",
+          "romantic",
+          "fun"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "strong chemistry",
+          "witty banter"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "query": "Survival movies.",
+      "category": "Category B – Genre discovery",
+      "category_key": "genre_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Adventure",
+          "Drama",
+          "Thriller",
+          "Action"
+        ],
+        "expected_themes": [
+          "survival",
+          "wilderness",
+          "isolated disaster",
+          "human endurance"
+        ],
+        "expected_plot_elements": [
+          "extreme elements",
+          "life-or-death struggle",
+          "resourcefulness"
+        ],
+        "expected_moods": [
+          "tense",
+          "intense",
+          "gripping",
+          "inspiring"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "realistic survival stakes",
+          "visceral pacing"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q14",
+      "query": "Feel-good movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Comedy",
+          "Drama",
+          "Family",
+          "Romance",
+          "Adventure"
+        ],
+        "expected_themes": [
+          "friendship",
+          "triumph over adversity",
+          "kindness",
+          "optimism"
+        ],
+        "expected_plot_elements": [
+          "heartwarming journey",
+          "uplifting climax",
+          "personal growth"
+        ],
+        "expected_moods": [
+          "feel-good",
+          "uplifting",
+          "heartwarming",
+          "wholesome"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "emotional comfort",
+          "positive resolution"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q15",
+      "query": "Movies for a cozy evening.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Comedy",
+          "Romance",
+          "Family",
+          "Animation"
+        ],
+        "expected_themes": [
+          "warmth",
+          "nostalgia",
+          "comfort",
+          "casual leisure"
+        ],
+        "expected_plot_elements": [
+          "small-town charm",
+          "gentle humor",
+          "comfort food atmosphere"
+        ],
+        "expected_moods": [
+          "cozy",
+          "relaxing",
+          "comforting",
+          "intimate"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "low stress",
+          "gentle pacing"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q16",
+      "query": "Dark and gritty movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Crime",
+          "Thriller",
+          "Drama",
+          "Action"
+        ],
+        "expected_themes": [
+          "urban decay",
+          "criminal brutality",
+          "moral compromise",
+          "vengeance"
+        ],
+        "expected_plot_elements": [
+          "rain-soaked streets",
+          "cynicism",
+          "violence"
+        ],
+        "expected_moods": [
+          "dark",
+          "gritty",
+          "bleak",
+          "visceral"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "uncompromising tone",
+          "neo-noir aesthetic"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q17",
+      "query": "Spine-chilling horror.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Horror",
+          "Mystery",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "supernatural dread",
+          "haunting",
+          "psychological terror",
+          "monsters"
+        ],
+        "expected_plot_elements": [
+          "jump scares",
+          "cursed entities",
+          "macabre atmosphere"
+        ],
+        "expected_moods": [
+          "spine-chilling",
+          "terrifying",
+          "eerie",
+          "dread-inducing"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "genuine scares",
+          "oppressive sound design"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q18",
+      "query": "Adrenaline-rush action movies.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Action",
+          "Thriller",
+          "Adventure"
+        ],
+        "expected_themes": [
+          "high speed",
+          "chases",
+          "explosions",
+          "heroic stunts"
+        ],
+        "expected_plot_elements": [
+          "gunfights",
+          "close-quarters combat",
+          "ticking clock"
+        ],
+        "expected_moods": [
+          "adrenaline",
+          "fast-paced",
+          "exhilarating",
+          "explosive"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "kinetic pacing",
+          "spectacle stunts"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q19",
+      "query": "Emotional tearjerkers.",
+      "category": "Category C – Mood discovery",
+      "category_key": "mood_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "mood",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Romance"
+        ],
+        "expected_themes": [
+          "loss",
+          "grief",
+          "poignant love",
+          "sacrifice",
+          "redemption"
+        ],
+        "expected_plot_elements": [
+          "bittersweet climax",
+          "terminal illness",
+          "family estrangement"
+        ],
+        "expected_moods": [
+          "emotional",
+          "tearjerker",
+          "poignant",
+          "melancholic"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "deep character empathy",
+          "cathartic release"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q20",
+      "query": "Underrated Malayalam thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "expected_intent": {
+        "intent_types": [
+          "regional",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Crime",
+          "Mystery",
+          "Drama"
+        ],
+        "expected_themes": [
+          "realistic crime",
+          "local community investigation",
+          "moral dilemma"
+        ],
+        "expected_plot_elements": [
+          "tight scripting",
+          "grounded characters",
+          "sudden twist"
+        ],
+        "expected_moods": [
+          "gripping",
+          "suspenseful",
+          "gritty"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "ml",
+          "region": "south_indian",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "underrated gems",
+          "naturalistic performances"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q21",
+      "query": "Best Hindi psychological thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "expected_intent": {
+        "intent_types": [
+          "regional",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Mystery",
+          "Drama"
+        ],
+        "expected_themes": [
+          "psychological suspense",
+          "mental deception",
+          "noir crime"
+        ],
+        "expected_plot_elements": [
+          "twisted mystery",
+          "split personality",
+          "obsessive investigation"
+        ],
+        "expected_moods": [
+          "tense",
+          "suspenseful",
+          "dark"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "hi",
+          "region": "bollywood",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "critically acclaimed Hindi cinema",
+          "gripping screenplay"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q22",
+      "query": "Telugu period action movies.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "expected_intent": {
+        "intent_types": [
+          "regional",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Action",
+          "Drama",
+          "History"
+        ],
+        "expected_themes": [
+          "period drama",
+          "historical rebellion",
+          "heroic warrior",
+          "royal intrigue"
+        ],
+        "expected_plot_elements": [
+          "epic battle",
+          "mythological elements",
+          "grand scale action"
+        ],
+        "expected_moods": [
+          "epic",
+          "high-octane",
+          "larger-than-life"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "te",
+          "region": "south_indian",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "grand visuals",
+          "heroic elevation"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q23",
+      "query": "Tamil crime thrillers.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "expected_intent": {
+        "intent_types": [
+          "regional",
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Crime",
+          "Thriller",
+          "Action",
+          "Mystery"
+        ],
+        "expected_themes": [
+          "undercover cop",
+          "gang warfare",
+          "serial investigation",
+          "vigilante justice"
+        ],
+        "expected_plot_elements": [
+          "police procedural",
+          "violent underworld",
+          "smart cat-and-mouse game"
+        ],
+        "expected_moods": [
+          "gritty",
+          "intense",
+          "suspenseful"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "ta",
+          "region": "south_indian",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "raw portrayal",
+          "fast-paced screenplay"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q24",
+      "query": "Best Gujarati movies.",
+      "category": "Category D – Regional cinema",
+      "category_key": "regional_cinema",
+      "expected_intent": {
+        "intent_types": [
+          "regional",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Comedy",
+          "Family"
+        ],
+        "expected_themes": [
+          "urban Gujarati life",
+          "cultural heritage",
+          "social commentary"
+        ],
+        "expected_plot_elements": [
+          "family relationships",
+          "local humor",
+          "contemporary Gujarati society"
+        ],
+        "expected_moods": [
+          "heartwarming",
+          "feel-good",
+          "engaging"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "gu",
+          "region": "gujarati",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "national award winners",
+          "new-wave Dhollywood"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q25",
+      "query": "Movies with unexpected endings.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Mystery",
+          "Drama",
+          "Science Fiction"
+        ],
+        "expected_themes": [
+          "unexpected ending",
+          "plot twist",
+          "subverted expectations"
+        ],
+        "expected_plot_elements": [
+          "final reveal",
+          "climax twist",
+          "recontextualized narrative"
+        ],
+        "expected_moods": [
+          "shocking",
+          "mind-bending",
+          "suspenseful"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "earned twist",
+          "rewatch value"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q26",
+      "query": "Movies with unreliable narrators.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "expected_themes": [
+          "unreliable narrator",
+          "subjective reality",
+          "psychological delusion"
+        ],
+        "expected_plot_elements": [
+          "false memories",
+          "altered perspective",
+          "truth revelation"
+        ],
+        "expected_moods": [
+          "disorienting",
+          "cerebral",
+          "mind-bending"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "intricate storytelling",
+          "psychological subtlety"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q27",
+      "query": "Movies about parallel universes.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Science Fiction",
+          "Adventure",
+          "Fantasy",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "parallel universe",
+          "multiverse",
+          "alternate timelines",
+          "quantum branching"
+        ],
+        "expected_plot_elements": [
+          "dimensional travel",
+          "alternate selves",
+          "paradox resolution"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "imaginative",
+          "exciting"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "inventive worldbuilding",
+          "philosophical implications"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q28",
+      "query": "Movies involving time loops.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "genre",
+          "complex"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Science Fiction",
+          "Mystery",
+          "Comedy",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "time loop",
+          "repeating day",
+          "temporal entrapment",
+          "breaking cycle"
+        ],
+        "expected_plot_elements": [
+          "iterative learning",
+          "death reset",
+          "destiny alteration"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "inventive",
+          "suspenseful"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "clever rules",
+          "character arc progression through loops"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q29",
+      "query": "Movies with shocking plot twists.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Thriller",
+          "Drama",
+          "Crime"
+        ],
+        "expected_themes": [
+          "plot twist",
+          "shocking reveal",
+          "misdirection",
+          "hidden identity"
+        ],
+        "expected_plot_elements": [
+          "red herrings",
+          "jaw-dropping climax",
+          "mastermind reveal"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "shocking",
+          "gripping"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "fair-play clues",
+          "unforgettable climax"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q30",
+      "query": "Movies where reality is not what it seems.",
+      "category": "Category E – Plot-based discovery",
+      "category_key": "plot_discovery",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Science Fiction",
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "expected_themes": [
+          "simulated reality",
+          "hallucination",
+          "existential doubt",
+          "conspiracy"
+        ],
+        "expected_plot_elements": [
+          "fabric of reality torn",
+          "memory glitch",
+          "awakening"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "paranoiac",
+          "philosophical"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "high conceptual originality",
+          "deep philosophical questions"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q31",
+      "query": "Underrated Indian psychological thrillers with unexpected endings.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "regional"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Mystery",
+          "Drama"
+        ],
+        "expected_themes": [
+          "psychological mystery",
+          "plot twist",
+          "underrated Indian cinema"
+        ],
+        "expected_plot_elements": [
+          "unexpected ending",
+          "mental deception",
+          "complex mystery"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "suspenseful",
+          "dark"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": "indian",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "hidden gems",
+          "strong domestic critical reception"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q32",
+      "query": "Sci-fi movies similar to Interstellar but more emotional.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "similar_to"
+        ],
+        "reference_title": "Interstellar",
+        "expected_genres": [
+          "Science Fiction",
+          "Drama"
+        ],
+        "expected_themes": [
+          "space travel",
+          "human connection",
+          "existential longing",
+          "family love"
+        ],
+        "expected_plot_elements": [
+          "cosmic journey",
+          "poignant sacrifice",
+          "deep emotional stakes"
+        ],
+        "expected_moods": [
+          "emotional",
+          "awe-inspiring",
+          "poignant",
+          "epic"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "emotional resonance prioritised over hard physics",
+          "haunting score"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": true,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q33",
+      "query": "Mystery movies with comedy and unexpected endings.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Comedy",
+          "Crime"
+        ],
+        "expected_themes": [
+          "whodunit comedy",
+          "satirical murder mystery",
+          "unexpected ending"
+        ],
+        "expected_plot_elements": [
+          "bizarre clues",
+          "eccentric suspects",
+          "final twist"
+        ],
+        "expected_moods": [
+          "witty",
+          "entertaining",
+          "playful",
+          "suspenseful"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "balanced tone between humor and genuine puzzle"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q34",
+      "query": "Hollywood action movies from the 1990s.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "time_period",
+          "regional"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Action",
+          "Thriller",
+          "Adventure"
+        ],
+        "expected_themes": [
+          "90s action blockbuster",
+          "practical pyrotechnics",
+          "one-man army"
+        ],
+        "expected_plot_elements": [
+          "hostage rescue",
+          "terrorist hijacking",
+          "classic shootouts"
+        ],
+        "expected_moods": [
+          "adrenaline",
+          "explosive",
+          "nostalgic"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "en",
+          "region": "hollywood",
+          "release_year_min": 1990,
+          "release_year_max": 1999
+        },
+        "soft_preferences": [
+          "90s icons",
+          "practical effects"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": true,
+          "require_year_bounds": true
+        }
+      }
+    },
+    {
+      "id": "Q35",
+      "query": "Feel-good Malayalam movies with strong storytelling.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "regional",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Comedy"
+        ],
+        "expected_themes": [
+          "heartwarming community",
+          "simple village life",
+          "slice-of-life"
+        ],
+        "expected_plot_elements": [
+          "family bonding",
+          "authentic rural Kerala",
+          "warm resolution"
+        ],
+        "expected_moods": [
+          "feel-good",
+          "uplifting",
+          "heartwarming"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "ml",
+          "region": "south_indian",
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "strong character development",
+          "poetic storytelling"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": true,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q36",
+      "query": "Psychological mysteries with an unreliable narrator and a shocking reveal.",
+      "category": "Category F – Complex requests",
+      "category_key": "complex_requests",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre",
+          "mood"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Thriller",
+          "Drama"
+        ],
+        "expected_themes": [
+          "unreliable narrator",
+          "shocking reveal",
+          "psychological delusion"
+        ],
+        "expected_plot_elements": [
+          "twisted memory",
+          "deceptive protagonist",
+          "mind-bending ending"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "chilling",
+          "suspenseful"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "airtight clue placement",
+          "deep psychological dread"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q37",
+      "query": "Best movies released after 2020.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "time_period",
+          "complex",
+          "general"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Science Fiction",
+          "Action",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "contemporary cinema",
+          "modern masterpieces"
+        ],
+        "expected_plot_elements": [
+          "high production quality",
+          "recent award winners"
+        ],
+        "expected_moods": [
+          "engaging",
+          "acclaimed"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": 2021,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "critical acclaim",
+          "recent releases"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": true
+        }
+      }
+    },
+    {
+      "id": "Q38",
+      "query": "Underrated independent films.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "general"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Comedy",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "indie cinema",
+          "festival darling",
+          "subtle storytelling"
+        ],
+        "expected_plot_elements": [
+          "intimate character study",
+          "modest budget",
+          "authentic dialogue"
+        ],
+        "expected_moods": [
+          "intimate",
+          "thought-provoking",
+          "grounded"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "film festival acclaim",
+          "underrated reputation"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q39",
+      "query": "Movies directed by Christopher Nolan.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "similar_to"
+        ],
+        "reference_title": "Christopher Nolan",
+        "expected_genres": [
+          "Science Fiction",
+          "Thriller",
+          "Action",
+          "Drama",
+          "Mystery"
+        ],
+        "expected_themes": [
+          "non-linear storytelling",
+          "time manipulation",
+          "practical scale",
+          "obsessive obsession"
+        ],
+        "expected_plot_elements": [
+          "complex chronology",
+          "high stakes",
+          "philosophical conflict"
+        ],
+        "expected_moods": [
+          "epic",
+          "mind-bending",
+          "intellectual"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "grand cinematic scale",
+          "layered audio-visual style"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q40",
+      "query": "Movies with intelligent detective protagonists.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Crime",
+          "Thriller"
+        ],
+        "expected_themes": [
+          "brilliant detective",
+          "forensic deduction",
+          "master criminal confrontation"
+        ],
+        "expected_plot_elements": [
+          "clue unraveling",
+          "cat-and-mouse duel",
+          "cerebral deduction"
+        ],
+        "expected_moods": [
+          "cerebral",
+          "suspenseful",
+          "intriguing"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "high intellect protagonist",
+          "complex criminal puzzle"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q41",
+      "query": "Korean revenge thrillers with dark humor.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "regional",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Thriller",
+          "Action",
+          "Crime",
+          "Comedy"
+        ],
+        "expected_themes": [
+          "Korean revenge",
+          "dark comedy",
+          "vigilante payback"
+        ],
+        "expected_plot_elements": [
+          "relentless hunt",
+          "grotesque humor",
+          "violent justice"
+        ],
+        "expected_moods": [
+          "dark",
+          "intense",
+          "gritty",
+          "edgy"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "ko",
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "celebrated Korean new-wave style",
+          "visceral action"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q42",
+      "query": "Cyberpunk sci-fi movies with philosophical themes.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Science Fiction",
+          "Thriller",
+          "Action"
+        ],
+        "expected_themes": [
+          "cyberpunk",
+          "transhumanism",
+          "AI consciousness",
+          "dystopian megacity"
+        ],
+        "expected_plot_elements": [
+          "cybernetic implants",
+          "corporate tyranny",
+          "what it means to be human"
+        ],
+        "expected_moods": [
+          "mind-bending",
+          "philosophical",
+          "atmospheric",
+          "dark"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "neon noir aesthetic",
+          "philosophical depth"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q43",
+      "query": "Spanish language mystery thrillers with twists.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "regional",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Mystery",
+          "Thriller",
+          "Crime"
+        ],
+        "expected_themes": [
+          "Spanish mystery",
+          "intricate plot twist",
+          "locked room puzzle"
+        ],
+        "expected_plot_elements": [
+          "false testimony",
+          "clever lawyer/detective",
+          "shocking reveal"
+        ],
+        "expected_moods": [
+          "suspenseful",
+          "tense",
+          "mind-bending"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": "es",
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "Oriol Paulo style twists",
+          "high rewatchability"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": true,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    },
+    {
+      "id": "Q44",
+      "query": "Classic animated movies from the 1980s.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "time_period",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Animation",
+          "Family",
+          "Fantasy",
+          "Adventure"
+        ],
+        "expected_themes": [
+          "80s animation",
+          "nostalgia",
+          "hand-drawn craft"
+        ],
+        "expected_plot_elements": [
+          "magical quest",
+          "fantastical creatures",
+          "childhood classic"
+        ],
+        "expected_moods": [
+          "nostalgic",
+          "enchanting",
+          "imaginative"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": 1980,
+          "release_year_max": 1989
+        },
+        "soft_preferences": [
+          "hand-drawn animation",
+          "cult or studio classic"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": true
+        }
+      }
+    },
+    {
+      "id": "Q45",
+      "query": "High-stakes financial and Wall Street thrillers.",
+      "category": "Category G – Additional queries",
+      "category_key": "additional_queries",
+      "expected_intent": {
+        "intent_types": [
+          "complex",
+          "genre"
+        ],
+        "reference_title": null,
+        "expected_genres": [
+          "Drama",
+          "Thriller",
+          "Crime"
+        ],
+        "expected_themes": [
+          "stock market collapse",
+          "greed",
+          "insider trading",
+          "corporate warfare"
+        ],
+        "expected_plot_elements": [
+          "trading floor panic",
+          "subprime crisis",
+          "ethical meltdown"
+        ],
+        "expected_moods": [
+          "tense",
+          "fast-paced",
+          "cynical"
+        ],
+        "hard_constraints": {
+          "content_type": "movie",
+          "language": null,
+          "region": null,
+          "release_year_min": null,
+          "release_year_max": null
+        },
+        "soft_preferences": [
+          "realistic financial terminology",
+          "high tension"
+        ],
+        "evaluation_rules": {
+          "min_genre_match": 1,
+          "require_reference_title": false,
+          "require_language": false,
+          "require_region": false,
+          "require_year_bounds": false
+        }
+      }
+    }
+  ]
+}

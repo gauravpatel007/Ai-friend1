@@ -26,10 +26,28 @@ env/
 venv/
 ENV/
 
+# Node & Frontend
+node_modules/
+.npm/
+
+# Local databases & uploads
+uploads/
+*.db
+*.sqlite3
+*.lnk
+tail_log.txt
+
+
+# Environment & Secrets
+.env
+*.env
+
 # Testing & Cache
 .pytest_cache/
 .pytest_temp/
 pytest-cache-files-*/
+temp_pt/
+tests/_test_scratch/
 .coverage
 htmlcov/
 

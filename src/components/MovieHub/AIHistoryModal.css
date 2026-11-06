@@ -1,0 +1,439 @@
+/* =============================================================================
+   AI Search History Modal: Apple VisionOS Frosted Glass Styling
+   ============================================================================= */
+
+.hub-ai-history-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  background: rgba(4, 6, 14, 0.76);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: hubHistoryFadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hubHistoryFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hub-ai-history-modal {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(18, 22, 38, 0.94);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.7),
+    0 4px 20px rgba(191, 90, 242, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  animation: hubHistoryScaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hubHistoryScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header */
+.hub-ai-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hub-ai-history-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hub-ai-history-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(191, 90, 242, 0.18);
+  border: 1px solid rgba(191, 90, 242, 0.35);
+  box-shadow: 0 0 16px rgba(191, 90, 242, 0.25);
+  color: #BF5AF2;
+  flex-shrink: 0;
+}
+
+.hub-ai-history-icon-glow {
+  filter: drop-shadow(0 0 6px rgba(191, 90, 242, 0.6));
+}
+
+.hub-ai-history-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.hub-ai-history-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #9898A0;
+}
+
+.hub-ai-history-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hub-ai-history-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 69, 58, 0.12);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: #FF6961;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.hub-ai-history-clear-btn:hover {
+  background: rgba(255, 69, 58, 0.22);
+  border-color: rgba(255, 69, 58, 0.55);
+  color: #FF857F;
+  box-shadow: 0 0 12px rgba(255, 69, 58, 0.3);
+}
+
+.hub-ai-history-clear-btn.confirm-mode {
+  background: #FF453A;
+  border-color: #FF453A;
+  color: #FFFFFF;
+  animation: hubPulseWarning 1s infinite alternate;
+}
+
+@keyframes hubPulseWarning {
+  from {
+    box-shadow: 0 0 4px rgba(255, 69, 58, 0.4);
+  }
+  to {
+    box-shadow: 0 0 14px rgba(255, 69, 58, 0.8);
+  }
+}
+
+.hub-ai-history-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #C7C7CC;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.hub-ai-history-close-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Search / Filter Input inside modal */
+.hub-ai-history-search-bar {
+  display: flex;
+  align-items: center;
+  margin: 14px 26px 8px;
+  padding: 0 14px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  gap: 10px;
+  transition: all 160ms ease;
+}
+
+.hub-ai-history-search-bar:focus-within {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(191, 90, 242, 0.5);
+  box-shadow: 0 0 12px rgba(191, 90, 242, 0.2);
+}
+
+.hub-ai-history-search-icon {
+  color: #8E8E93;
+}
+
+.hub-ai-history-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+.hub-ai-history-search-input::placeholder {
+  color: #71717A;
+}
+
+.hub-ai-history-filter-clear {
+  background: none;
+  border: none;
+  color: #8E8E93;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 150ms ease;
+}
+
+.hub-ai-history-filter-clear:hover {
+  color: #FFFFFF;
+}
+
+/* History List Container */
+.hub-ai-history-list-wrap {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 26px 18px;
+  max-height: 52vh;
+}
+
+.hub-ai-history-list-wrap::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hub-ai-history-list-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hub-ai-history-list-wrap::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+.hub-ai-history-list-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Empty State */
+.hub-ai-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 20px;
+  text-align: center;
+}
+
+.hub-ai-history-empty-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #636366;
+}
+
+.hub-ai-history-empty-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #E5E5EA;
+}
+
+.hub-ai-history-empty-desc {
+  margin: 0;
+  font-size: 13px;
+  color: #8E8E93;
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+/* History Item */
+.hub-ai-history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hub-ai-history-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  user-select: none;
+}
+
+.hub-ai-history-item:hover {
+  background: rgba(191, 90, 242, 0.12);
+  border-color: rgba(191, 90, 242, 0.35);
+  transform: translateX(3px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), 0 0 14px rgba(191, 90, 242, 0.15);
+}
+
+.hub-ai-history-item:active {
+  transform: scale(0.99) translateX(3px);
+}
+
+.hub-ai-history-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(191, 90, 242, 0.12);
+  color: #BF5AF2;
+  flex-shrink: 0;
+  transition: all 180ms ease;
+}
+
+.hub-ai-history-item:hover .hub-ai-history-item-icon {
+  background: rgba(191, 90, 242, 0.28);
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(191, 90, 242, 0.4);
+}
+
+.hub-ai-history-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hub-ai-history-item-query {
+  font-size: 14px;
+  font-weight: 500;
+  color: #F2F2F7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.hub-ai-history-item:hover .hub-ai-history-item-query {
+  color: #FFFFFF;
+}
+
+.hub-ai-history-item-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: #8E8E93;
+}
+
+.time-clock-icon {
+  color: #636366;
+}
+
+/* Actions inside Item */
+.hub-ai-history-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.hub-ai-history-run-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(191, 90, 242, 0.15);
+  border: 1px solid rgba(191, 90, 242, 0.35);
+  color: #BF5AF2;
+  font-size: 11.5px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 180ms ease;
+}
+
+.hub-ai-history-item:hover .hub-ai-history-run-hint {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hub-ai-history-item-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #636366;
+  cursor: pointer;
+  transition: all 160ms ease;
+  padding: 0;
+}
+
+.hub-ai-history-item-delete:hover {
+  background: rgba(255, 69, 58, 0.2);
+  color: #FF453A;
+}
+
+/* Modal Footer */
+.hub-ai-history-footer {
+  padding: 12px 26px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-ai-history-footer-hint {
+  font-size: 12px;
+  color: #9898A0;
+}
+

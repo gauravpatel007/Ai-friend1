@@ -1,0 +1,1494 @@
+/* ==========================================================================
+   SettingsModal.css — Apple macOS System Settings Human Interface Design
+   ========================================================================== */
+
+.apple-settings-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 6, 12, 0.72);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  animation: settingsScrimFade 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes settingsScrimFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.apple-settings-window {
+  position: relative;
+  width: clamp(780px, 62vw, 1200px);
+  height: clamp(560px, 72vh, 840px);
+  max-width: 95vw;
+  max-height: 92vh;
+  background: rgba(22, 26, 38, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 20px;
+  box-shadow:
+    0 32px 84px rgba(0, 0, 0, 0.75),
+    0 8px 32px rgba(10, 132, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: settingsScaleUp 280ms cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+  transition: width 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              height 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              max-height 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes settingsScaleUp {
+  from {
+    transform: scale(0.94) translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 1. Window Header */
+.settings-window-header {
+  height: 56px;
+  min-height: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.settings-window-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sheet-badge-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.25) 0%, rgba(0, 113, 227, 0.35) 100%);
+  border: 1px solid rgba(10, 132, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0A84FF;
+  box-shadow: 0 2px 8px rgba(10, 132, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.sheet-title-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.settings-main-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #F5F5F7;
+}
+
+.settings-sub-caption {
+  font-size: 11px;
+  color: #8E8E93;
+}
+
+.settings-window-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.settings-window-action-btn,
+.settings-window-close {
+  background: transparent;
+  border: none;
+  color: #8E8E93;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.settings-window-action-btn:hover,
+.settings-window-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.settings-window-action-btn:active,
+.settings-window-close:active {
+  transform: scale(0.92);
+}
+
+/* 2. Window Body: Master Detail */
+.settings-window-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Category Sidebar */
+.settings-category-sidebar {
+  width: 210px;
+  min-width: 210px;
+  background: rgba(0, 0, 0, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 10px;
+  overflow-y: auto;
+}
+
+.settings-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #A1A1A6;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 160ms ease;
+  text-align: left;
+}
+
+.category-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F5F5F7;
+}
+
+.category-item.active {
+  background: rgba(10, 132, 255, 0.22);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Apple Squircle Badges */
+.squircle-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.badge-blue { background: linear-gradient(135deg, #0A84FF 0%, #0066D6 100%); }
+.badge-purple { background: linear-gradient(135deg, #BF5AF2 0%, #9A36D4 100%); }
+.badge-cyan { background: linear-gradient(135deg, #00E5FF 0%, #0A84FF 100%); }
+.badge-amber { background: linear-gradient(135deg, #FF9F0A 0%, #D97E00 100%); }
+.badge-green { background: linear-gradient(135deg, #30D158 0%, #24A144 100%); }
+.badge-pink { background: linear-gradient(135deg, #FF375F 0%, #D41A40 100%); }
+.badge-orange { background: linear-gradient(135deg, #FF9F0A 0%, #FF453A 100%); }
+.badge-indigo { background: linear-gradient(135deg, #5E5CE6 0%, #3634A3 100%); }
+.badge-teal { background: linear-gradient(135deg, #30B0C7 0%, #0088A3 100%); }
+
+/* Right Detail Pane */
+.settings-detail-pane {
+  flex: 1;
+  padding: 20px 24px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-section-content {
+  animation: sectionFade 200ms ease;
+}
+
+@keyframes sectionFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-section-heading {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #F5F5F7;
+  margin-bottom: 4px;
+}
+
+.pane-section-desc {
+  font-size: 12px;
+  color: #8E8E93;
+  margin-bottom: 18px;
+}
+
+/* Apple Inset Grouped Container */
+.apple-grouped-inset {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-row-column {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.setting-row-column:last-child {
+  border-bottom: none;
+}
+
+.setting-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.setting-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #F5F5F7;
+}
+
+.setting-caption {
+  font-size: 11px;
+  color: #8E8E93;
+}
+
+/* Form Controls */
+.apple-input-text {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  font-size: 13px;
+  outline: none;
+  transition: all 180ms ease;
+}
+
+.apple-input-text:focus {
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.25);
+}
+
+.apple-select {
+  min-width: 220px;
+  background: rgba(24, 28, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.apple-select:focus {
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.25);
+}
+
+/* Apple iOS-Style Toggle Switch */
+.apple-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.apple-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  transition: 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: 240ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.apple-switch input:checked + .switch-slider {
+  background-color: #30D158;
+}
+
+.apple-switch input:checked + .switch-slider:before {
+  transform: translateX(20px);
+}
+
+/* Sliders */
+.slider-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.slider-value-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0A84FF;
+}
+
+.apple-slider {
+  width: 100%;
+  accent-color: #0A84FF;
+  cursor: pointer;
+}
+
+/* Status Pill */
+.status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.pill-online {
+  background: rgba(48, 209, 88, 0.18);
+  color: #30D158;
+  border: 1px solid rgba(48, 209, 88, 0.35);
+}
+
+.pill-offline {
+  background: rgba(255, 69, 58, 0.18);
+  color: #FF453A;
+  border: 1px solid rgba(255, 69, 58, 0.35);
+}
+
+/* Memory Section */
+.pane-header-with-action {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.add-memory-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.add-memory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #F5F5F7;
+  margin-bottom: 8px;
+}
+
+.apple-textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #FFFFFF;
+  font-size: 13px;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.apple-textarea:focus {
+  border-color: #0A84FF;
+}
+
+.add-memory-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.memory-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-bottom: 12px;
+}
+
+.memory-search-input {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+}
+
+.memories-list-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.memory-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.memory-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.memory-cat-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(10, 132, 255, 0.2);
+  color: #0A84FF;
+}
+
+.memory-content-text {
+  font-size: 13px;
+  color: #F5F5F7;
+}
+
+.memory-date-caption {
+  font-size: 10px;
+  color: #7C7C82;
+}
+
+.memory-delete-btn {
+  background: transparent;
+  border: none;
+  color: #8E8E93;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.memory-delete-btn:hover {
+  background: rgba(255, 69, 58, 0.2);
+  color: #FF453A;
+}
+
+.empty-memory-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #8E8E93;
+  gap: 8px;
+}
+
+/* Color Swatches */
+.color-swatch-row {
+  display: flex;
+  gap: 8px;
+}
+
+.color-swatch-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 160ms ease;
+}
+
+.color-swatch-btn:hover {
+  transform: scale(1.15);
+}
+
+.swatch-active {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Diagnostics Grid */
+.diagnostic-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #8E8E93;
+  font-weight: 500;
+}
+
+.metric-val {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00E5FF;
+}
+
+/* 3. Window Footer Actions */
+.settings-window-footer {
+  height: 52px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.apple-secondary-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F5F5F7;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.apple-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.apple-primary-btn {
+  background: linear-gradient(135deg, #0A84FF 0%, #0066D6 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
+}
+
+.apple-primary-btn:hover {
+  box-shadow: 0 6px 18px rgba(10, 132, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+.save-icon-success {
+  animation: checkPop 250ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes checkPop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.icon-btn-subtle {
+  background: transparent;
+  border: none;
+  color: #8E8E93;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Big Screen & Responsive Sizing (1080p, 1440p, 4K & Ultrawide Displays)
+   ========================================================================== */
+
+/* Medium-Large screens (1200px+) */
+@media (min-width: 1200px) {
+  .apple-settings-window {
+    width: clamp(860px, 64vw, 1260px);
+    height: clamp(600px, 72vh, 860px);
+  }
+
+  .settings-category-sidebar {
+    width: 230px;
+    min-width: 230px;
+    padding: 14px 12px;
+  }
+
+  .category-item {
+    padding: 8px 12px;
+    font-size: 13.5px;
+  }
+
+  .settings-detail-pane {
+    padding: 24px 30px;
+  }
+
+  .pane-section-heading {
+    font-size: 18px;
+  }
+
+  .apple-input-text {
+    width: 260px;
+  }
+
+  .apple-select {
+    min-width: 250px;
+  }
+
+  .memories-list-scroll {
+    max-height: 340px;
+  }
+}
+
+/* Big screens: 1400px+ (Desktop full screen, 1080p, 1440p) */
+@media (min-width: 1400px) and (min-height: 760px) {
+  .apple-settings-window {
+    width: clamp(980px, 66vw, 1360px);
+    height: clamp(660px, 74vh, 900px);
+    border-radius: 22px;
+  }
+
+  .settings-window-header {
+    height: 62px;
+    min-height: 62px;
+    padding: 0 24px;
+  }
+
+  .sheet-badge-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .settings-main-title {
+    font-size: 15px;
+  }
+
+  .settings-sub-caption {
+    font-size: 12px;
+  }
+
+  .settings-category-sidebar {
+    width: 250px;
+    min-width: 250px;
+    padding: 16px 14px;
+  }
+
+  .category-item {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 9px;
+    gap: 12px;
+  }
+
+  .squircle-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+  }
+
+  .settings-detail-pane {
+    padding: 28px 36px;
+  }
+
+  .pane-section-heading {
+    font-size: 19.5px;
+    margin-bottom: 6px;
+  }
+
+  .pane-section-desc {
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+
+  .apple-grouped-inset {
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .setting-row {
+    padding: 15px 18px;
+  }
+
+  .setting-row-column {
+    padding: 15px 18px;
+  }
+
+  .setting-title {
+    font-size: 14px;
+  }
+
+  .setting-caption {
+    font-size: 12px;
+  }
+
+  .apple-input-text {
+    width: 300px;
+    padding: 8px 12px;
+    font-size: 13.5px;
+    border-radius: 9px;
+  }
+
+  .apple-select {
+    min-width: 270px;
+    padding: 8px 12px;
+    font-size: 13.5px;
+    border-radius: 9px;
+  }
+
+  .memories-list-scroll {
+    max-height: 420px;
+  }
+
+  .diagnostic-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .metric-card {
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+  }
+
+  .metric-val {
+    font-size: 20px;
+  }
+
+  .settings-window-footer {
+    height: 60px;
+    padding: 0 24px;
+  }
+
+  .apple-primary-btn,
+  .apple-secondary-btn {
+    padding: 8px 18px;
+    font-size: 13.5px;
+  }
+}
+
+/* Extra large screens: 1800px+ (1080p full width, 1440p, 4K) */
+@media (min-width: 1800px) and (min-height: 850px) {
+  .apple-settings-window {
+    width: clamp(1180px, 68vw, 1540px);
+    height: clamp(740px, 76vh, 960px);
+    border-radius: 24px;
+  }
+
+  .settings-window-header {
+    height: 68px;
+    min-height: 68px;
+    padding: 0 28px;
+  }
+
+  .sheet-badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .settings-main-title {
+    font-size: 16px;
+  }
+
+  .settings-sub-caption {
+    font-size: 12.5px;
+  }
+
+  .settings-category-sidebar {
+    width: 275px;
+    min-width: 275px;
+    padding: 18px 16px;
+  }
+
+  .category-item {
+    padding: 11px 15px;
+    font-size: 14.5px;
+    border-radius: 10px;
+    gap: 14px;
+  }
+
+  .squircle-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .settings-detail-pane {
+    padding: 34px 44px;
+  }
+
+  .pane-section-heading {
+    font-size: 21px;
+    margin-bottom: 7px;
+  }
+
+  .pane-section-desc {
+    font-size: 13.5px;
+    margin-bottom: 24px;
+  }
+
+  .apple-grouped-inset {
+    border-radius: 16px;
+    margin-bottom: 22px;
+  }
+
+  .setting-row {
+    padding: 17px 22px;
+  }
+
+  .setting-row-column {
+    padding: 17px 22px;
+  }
+
+  .setting-title {
+    font-size: 14.5px;
+  }
+
+  .setting-caption {
+    font-size: 12.5px;
+  }
+
+  .apple-input-text {
+    width: 340px;
+    padding: 9px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .apple-select {
+    min-width: 300px;
+    padding: 9px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .memories-list-scroll {
+    max-height: 500px;
+  }
+
+  .diagnostic-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .metric-card {
+    padding: 16px 18px;
+    border-radius: 12px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+  }
+
+  .metric-val {
+    font-size: 22px;
+  }
+
+  .settings-window-footer {
+    height: 64px;
+    padding: 0 28px;
+  }
+
+  .apple-primary-btn,
+  .apple-secondary-btn {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+}
+
+/* User-controlled Maximized / Full-view State */
+.apple-settings-window.is-maximized {
+  width: 95vw !important;
+  height: 92vh !important;
+  max-width: 95vw !important;
+  max-height: 92vh !important;
+  border-radius: 16px !important;
+}
+
+.apple-settings-window.is-maximized .settings-window-header {
+  height: 66px;
+  min-height: 66px;
+  padding: 0 26px;
+}
+
+.apple-settings-window.is-maximized .settings-category-sidebar {
+  width: 270px;
+  min-width: 270px;
+  padding: 18px 16px;
+}
+
+.apple-settings-window.is-maximized .category-item {
+  padding: 11px 15px;
+  font-size: 14.5px;
+  border-radius: 10px;
+  gap: 14px;
+}
+
+.apple-settings-window.is-maximized .squircle-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+
+.apple-settings-window.is-maximized .settings-detail-pane {
+  padding: 32px 44px;
+}
+
+.apple-settings-window.is-maximized .pane-section-heading {
+  font-size: 21px;
+}
+
+.apple-settings-window.is-maximized .pane-section-desc {
+  font-size: 13.5px;
+}
+
+.apple-settings-window.is-maximized .setting-row {
+  padding: 16px 20px;
+}
+
+.apple-settings-window.is-maximized .setting-row-column {
+  padding: 16px 20px;
+}
+
+.apple-settings-window.is-maximized .setting-title {
+  font-size: 14.5px;
+}
+
+.apple-settings-window.is-maximized .setting-caption {
+  font-size: 12.5px;
+}
+
+.apple-settings-window.is-maximized .apple-input-text {
+  width: 360px;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.apple-settings-window.is-maximized .apple-select {
+  min-width: 320px;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.apple-settings-window.is-maximized .memories-list-scroll {
+  max-height: calc(92vh - 340px);
+}
+
+.apple-settings-window.is-maximized .diagnostic-metrics-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.apple-settings-window.is-maximized .metric-card {
+  padding: 16px 18px;
+  border-radius: 12px;
+}
+
+.apple-settings-window.is-maximized .metric-label {
+  font-size: 12px;
+}
+
+.apple-settings-window.is-maximized .metric-val {
+  font-size: 24px;
+}
+
+.apple-settings-window.is-maximized .settings-window-footer {
+  height: 64px;
+  padding: 0 26px;
+}
+
+/* ==========================================================================
+   Movie Hub & TMDB Settings Pane Styles
+   ========================================================================== */
+
+.settings-tmdb-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.settings-tmdb-status-pill.connected {
+  background: rgba(52, 199, 89, 0.16);
+  color: #34C759;
+  border: 1px solid rgba(52, 199, 89, 0.35);
+}
+
+.settings-tmdb-status-pill.disconnected {
+  background: rgba(255, 159, 10, 0.16);
+  color: #FF9F0A;
+  border: 1px solid rgba(255, 159, 10, 0.35);
+}
+
+.settings-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.settings-active-key-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-masked-text {
+  font-family: monospace;
+  font-size: 12.5px;
+  color: #F5F5F7;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.settings-source-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.settings-source-tag.custom {
+  background: rgba(10, 132, 255, 0.18);
+  color: #0A84FF;
+}
+
+.settings-source-tag.env {
+  background: rgba(191, 90, 242, 0.18);
+  color: #BF5AF2;
+}
+
+.settings-key-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.settings-key-input-wrapper .apple-input-text {
+  padding-right: 36px;
+  font-family: monospace;
+  font-size: 12.5px;
+  width: 100%;
+}
+
+.settings-toggle-eye-btn {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-toggle-eye-btn:hover {
+  color: #FFFFFF;
+}
+
+.settings-actions-cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-inline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  border: none;
+}
+
+.settings-inline-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-inline-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #E5E5EA;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.settings-inline-btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+
+.settings-inline-btn-primary {
+  background: #0A84FF;
+  color: #FFFFFF;
+}
+
+.settings-inline-btn-primary:hover:not(:disabled) {
+  background: #0071E3;
+}
+
+.settings-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.settings-history-row:last-child {
+  border-bottom: none;
+}
+
+.settings-history-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settings-history-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-history-item-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.settings-history-item-meta {
+  font-size: 11.5px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.settings-active-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #34C759;
+  color: #000000;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.settings-history-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.settings-history-activate-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E5E5EA;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.settings-history-activate-btn:hover {
+  background: rgba(10, 132, 255, 0.25);
+  border-color: #0A84FF;
+  color: #FFFFFF;
+}
+
+.settings-history-delete-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 140ms ease;
+}
+
+.settings-history-delete-btn:hover {
+  background: rgba(255, 69, 58, 0.16);
+  color: #FF453A;
+}
+
+.settings-notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.settings-notice-banner.success {
+  background: rgba(52, 199, 89, 0.12);
+  border: 1px solid rgba(52, 199, 89, 0.3);
+  color: #30D158;
+}
+
+.settings-notice-banner.error {
+  background: rgba(255, 69, 58, 0.14);
+  border: 1px solid rgba(255, 69, 58, 0.35);
+  color: #FF6961;
+}
+
+.settings-security-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 6px 4px;
+}
+
+.settings-preview-code-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  color: #BF5AF2;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+@keyframes spinKeyframe {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spinKeyframe 0.8s linear infinite;
+}
+
+/* Voice Profile Cards (Phase 1, 7 & 10) */
+.voice-profiles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 16px 0;
+}
+
+.voice-profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.voice-profile-card:hover {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.voice-profile-card.selected {
+  background: rgba(10, 132, 255, 0.12);
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 1px rgba(10, 132, 255, 0.3);
+}
+
+.voice-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.voice-radio-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-profile-card.selected .voice-radio-circle {
+  border-color: #0A84FF;
+}
+
+.voice-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0A84FF;
+}
+
+.voice-meta-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.voice-gender-badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #8E8E93;
+}
+
+.voice-profile-card.selected .voice-gender-badge {
+  background: rgba(10, 132, 255, 0.25);
+  color: #70B4FF;
+}
+
+.voice-traits {
+  font-size: 11px;
+  color: #8E8E93;
+  margin-top: 2px;
+}
+
+.voice-card-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-lang-select {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  color: #F5F5F7;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.voice-preview-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  color: #F5F5F7;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.voice-preview-btn:hover {
+  background: rgba(10, 132, 255, 0.25);
+  border-color: #0A84FF;
+  color: #0A84FF;
+}
+
+

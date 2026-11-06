@@ -98,6 +98,11 @@ def setup_logging(
 
     # Console handler
     if console_output:
+        if hasattr(sys.stdout, "reconfigure"):
+            try:
+                sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setLevel(log_level)
         console_handler.setFormatter(formatter)

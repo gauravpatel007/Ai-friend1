@@ -1,0 +1,1660 @@
+/* ==========================================================================
+   Movie Hub — Apple Design System (WWDC Fluid Interfaces & macOS / visionOS)
+   Principles:
+   - Materials & Depth: Translucent frosted glass (backdrop-filter: blur(28px) saturate(190%))
+   - Specular Highlights: Top-edge bright specular borders (inset 0 1px 0 rgba(255,255,255,0.14))
+   - Response: Zero-latency tactile feedback on press (:active { transform: scale(0.97) })
+   - Typography: Optical sizing, negative tracking on display titles, positive tracking on chips
+   - Color: Deep obsidian canvas, Apple System Blue (#0A84FF), Apple Purple (#BF5AF2), Gold (#FFD60A)
+   ========================================================================== */
+
+/* Keyframe Animations */
+@keyframes apple-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.99) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes apple-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes apple-pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+/* ==========================================================================
+   Workspace Root Container
+   ========================================================================== */
+.movie-hub-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.10) 0%, transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(191, 90, 242, 0.08) 0%, transparent 50%),
+    #080A12;
+  color: #F5F5F7;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", sans-serif);
+  overflow: hidden;
+  user-select: text;
+  -webkit-user-select: text;
+  animation: apple-fade-in 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   1. Floating Frosted Header (Apple Window Bar)
+   ========================================================================== */
+.movie-hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 22px;
+  background: rgba(14, 18, 30, 0.85);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  gap: 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+  flex-wrap: nowrap;
+}
+
+.movie-hub-title-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.movie-hub-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.3) 0%, rgba(191, 90, 242, 0.25) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: transform 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.movie-hub-icon-badge:hover {
+  transform: scale(1.05);
+}
+
+.movie-hub-title-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.movie-hub-main-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hub-shell-tag {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #0A84FF;
+  background: rgba(10, 132, 255, 0.16);
+  border: 1px solid rgba(10, 132, 255, 0.35);
+  padding: 1px 7px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(10, 132, 255, 0.2);
+}
+
+/* Hub Header Navigation Tabs & Preferences Trigger (Phase 8) */
+.hub-header-tabs-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.hub-view-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.hub-view-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 27px;
+  padding: 0 11px;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #A1A1A6;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-view-tab-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hub-view-tab-btn.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hub-view-tab-btn.active-ai {
+  background: linear-gradient(135deg, rgba(175, 82, 222, 0.32) 0%, rgba(10, 132, 255, 0.28) 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: 1px solid rgba(175, 82, 222, 0.45);
+  box-shadow: 0 2px 14px rgba(175, 82, 222, 0.35);
+}
+
+.hub-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  height: 16px;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  background: #0A84FF;
+  color: #FFFFFF;
+}
+
+.hub-preferences-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 31px;
+  padding: 0 11px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #D1D1D6;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-preferences-trigger-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.hub-apikey-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 31px;
+  padding: 0 11px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #D1D1D6;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-apikey-trigger-btn:hover {
+  background: rgba(191, 90, 242, 0.18);
+  border-color: rgba(191, 90, 242, 0.45);
+  color: #FFFFFF;
+}
+
+.hub-filter-spacer {
+  flex: 1;
+}
+
+.hub-shelf-apikey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #D1D1D6;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: auto;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-shelf-apikey-btn:hover {
+  background: rgba(191, 90, 242, 0.18);
+  border-color: rgba(191, 90, 242, 0.45);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   2. SearchBar Component (Apple Spotlight & Safari Aesthetic)
+   ========================================================================== */
+.hub-search-slot {
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+  margin-left: auto;
+  flex-shrink: 1;
+}
+
+.hub-searchbar-container {
+  width: 100%;
+}
+
+.hub-searchbar-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px; /* Apple capsule pill */
+  padding: 0 14px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: border-color 150ms ease, background 150ms ease;
+  outline: none;
+}
+
+.hub-searchbar-frame:focus-within {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.hub-searchbar-glyph {
+  color: #7C7C82;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: color 150ms ease;
+}
+
+.hub-searchbar-frame:focus-within .hub-searchbar-glyph {
+  color: #0A84FF;
+}
+
+.hub-searchbar-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.hub-searchbar-input:focus,
+.hub-searchbar-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.hub-searchbar-input::placeholder {
+  color: #7C7C82;
+  font-size: 12.5px;
+}
+
+.hub-searchbar-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #D1D1D6;
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+  transition: all 120ms ease;
+}
+
+.hub-searchbar-clear:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+}
+
+.hub-searchbar-clear:active {
+  transform: scale(0.9);
+}
+
+/* Voice search & Shortcut hint styles in Searchbar */
+.hub-searchbar-frame.listening {
+  border-color: rgba(255, 69, 58, 0.7);
+  box-shadow: 0 0 12px rgba(255, 69, 58, 0.3), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hub-searchbar-frame.transcribing {
+  border-color: rgba(10, 132, 255, 0.7);
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.3), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hub-searchbar-frame.error {
+  border-color: rgba(255, 159, 10, 0.7);
+  box-shadow: 0 0 12px rgba(255, 159, 10, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hub-searchbar-mic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #8E8E93;
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+  transition: all 140ms ease;
+}
+
+.hub-searchbar-mic-btn:hover:not(:disabled) {
+  color: #0A84FF;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.hub-searchbar-mic-btn.active-recording {
+  color: #FF453A;
+  background: rgba(255, 69, 58, 0.2);
+  animation: apple-pulse-glow 1.2s infinite ease-in-out;
+}
+
+.hub-mic-icon.spinning {
+  animation: hub-spin 1s linear infinite;
+  color: #0A84FF;
+}
+
+@keyframes hub-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hub-searchbar-status-tip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(20, 20, 24, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #E5E5EA;
+  font-size: 11.5px;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  z-index: 50;
+  animation: hub-tip-pop 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.hub-searchbar-status-tip.recording {
+  border-color: rgba(255, 69, 58, 0.4);
+  color: #FF6961;
+}
+
+.hub-searchbar-status-tip.transcribing {
+  border-color: rgba(10, 132, 255, 0.4);
+  color: #64D2FF;
+}
+
+.hub-searchbar-status-tip.error {
+  border-color: rgba(255, 159, 10, 0.4);
+  color: #FFD60A;
+}
+
+.hub-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.hub-searchbar-status-tip.recording .hub-status-dot {
+  animation: apple-pulse-glow 1s infinite ease-in-out;
+}
+
+@keyframes hub-tip-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hub-search-shortcut-hint {
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #636366;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Accessibility focus-visible enhancements */
+button:focus-visible,
+input:not(.hub-searchbar-input):not(.hub-ai-text-input):focus-visible,
+select:focus-visible,
+article:focus-visible,
+.hub-similar-card:focus-visible {
+  outline: 2px solid #0A84FF !important;
+  outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   3. Filter Shelf & Segmented Controls (macOS System Toolbar)
+   ========================================================================== */
+.movie-hub-filter-shelf {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 28px;
+  background: rgba(16, 20, 34, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.hub-filter-row-primary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hub-control-unit {
+  display: flex;
+  align-items: center;
+}
+
+.hub-shelf-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 4px;
+}
+
+/* Segmented Control (macOS Segmented Switcher) */
+.hub-segmented-selector {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 11px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  gap: 2px;
+}
+
+.hub-seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  height: 28px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #A1A1A6;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  user-select: none;
+}
+
+.hub-seg-btn:hover:not(.active) {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hub-seg-btn:active {
+  transform: scale(0.96); /* Instant tactile press */
+}
+
+.hub-seg-btn.active {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.10) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+}
+
+/* Regional Category Carousel (Apple TV Genre Bar) */
+.hub-filter-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.hub-cluster-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7C7C82;
+  white-space: nowrap;
+}
+
+.hub-pill-segmented-scroll {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.hub-pill-segmented-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hub-region-pill {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 9999px; /* Smooth Apple Pill */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #A1A1A6;
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hub-region-pill:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.hub-region-pill:active {
+  transform: scale(0.96); /* Instant tactile press */
+}
+
+.hub-region-pill.active {
+  background: rgba(10, 132, 255, 0.22);
+  border-color: rgba(10, 132, 255, 0.6);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(10, 132, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary Filter Bar (Dropdowns & Reset) */
+.hub-filter-row-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hub-secondary-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hub-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hub-native-select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 29px;
+  padding: 0 28px 0 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E5E5EA;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A1A1A6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+}
+
+.hub-native-select:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.hub-native-select:focus {
+  border-color: rgba(10, 132, 255, 0.65);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.25);
+}
+
+.hub-native-select option {
+  background: #141724;
+  color: #F5F5F7;
+}
+
+.hub-reset-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 29px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: rgba(255, 69, 58, 0.12);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: #FF453A;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.hub-reset-filters-btn:hover {
+  background: rgba(255, 69, 58, 0.2);
+  color: #FF6961;
+  border-color: rgba(255, 69, 58, 0.5);
+}
+
+.hub-reset-filters-btn:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   4. Main Scrollable Content Viewport
+   ========================================================================== */
+.movie-hub-content-viewport {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 28px 48px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Apple Custom Minimal Scrollbar */
+.movie-hub-content-viewport::-webkit-scrollbar {
+  width: 7px;
+}
+
+.movie-hub-content-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.movie-hub-content-viewport::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+
+.movie-hub-content-viewport::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Apple TV+ Style Featured Billboard Showcase */
+.hub-featured-container {
+  width: 100%;
+}
+
+.hub-featured-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 180px;
+  padding: 26px 30px;
+  border-radius: 20px; /* Apple Continuous Squircle */
+  background: 
+    linear-gradient(135deg, rgba(10, 132, 255, 0.16) 0%, rgba(191, 90, 242, 0.12) 50%, rgba(6, 8, 14, 0.8) 100%),
+    rgba(22, 28, 44, 0.55);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms ease;
+}
+
+.hub-featured-card:hover {
+  box-shadow: 
+    0 22px 50px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(10, 132, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.hub-featured-meta {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hub-featured-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0A84FF;
+  background: rgba(10, 132, 255, 0.18);
+  border: 1px solid rgba(10, 132, 255, 0.4);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.25);
+}
+
+.hub-featured-headline {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.03em; /* Negative tracking for large display */
+  line-height: 1.15;
+}
+
+.hub-featured-description {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #D1D1D6;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hub-featured-ambient {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10, 132, 255, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+  animation: apple-pulse-glow 6s infinite ease-in-out;
+}
+
+/* AI Teaser / Warning Banner (visionOS Ambient Glass Card) */
+.hub-ai-teaser-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: rgba(28, 32, 48, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.hub-ai-teaser-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hub-ai-teaser-content {
+  flex: 1;
+}
+
+.hub-ai-teaser-title {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.hub-ai-teaser-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #A1A1A6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   5. Media Results Catalog Header & Active Tags
+   ========================================================================== */
+.hub-catalog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hub-catalog-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hub-catalog-title-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hub-catalog-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hub-active-filter-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hub-filter-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(10px);
+}
+
+.tag-format {
+  background: rgba(10, 132, 255, 0.15);
+  border: 1px solid rgba(10, 132, 255, 0.35);
+  color: #0A84FF;
+}
+
+.tag-region {
+  background: rgba(48, 209, 88, 0.15);
+  border: 1px solid rgba(48, 209, 88, 0.35);
+  color: #30D158;
+}
+
+.tag-lang {
+  background: rgba(255, 159, 10, 0.15);
+  border: 1px solid rgba(255, 159, 10, 0.35);
+  color: #FF9F0A;
+}
+
+.tag-genre {
+  background: rgba(191, 90, 242, 0.15);
+  border: 1px solid rgba(191, 90, 242, 0.35);
+  color: #BF5AF2;
+}
+
+.tag-year {
+  background: rgba(94, 92, 230, 0.15);
+  border: 1px solid rgba(94, 92, 230, 0.35);
+  color: #5E5CE6;
+}
+
+.tag-sort {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E5E5EA;
+}
+
+/* ==========================================================================
+   6. Media Grid & Apple TV+ Poster Cards
+   ========================================================================== */
+.hub-catalog-grid-wrapper {
+  width: 100%;
+}
+
+.hub-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 22px 18px;
+  width: 100%;
+}
+
+/* Media Card (Apple TV Style Poster) */
+.hub-media-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 14px;
+  padding: 6px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease, border-color 220ms ease;
+  cursor: pointer;
+}
+
+.hub-media-card:hover {
+  transform: translateY(-6px) scale(1.025); /* Apple spring elevation */
+  border-color: rgba(10, 132, 255, 0.4);
+  box-shadow: 
+    0 18px 36px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(10, 132, 255, 0.22);
+}
+
+.hub-media-card:active {
+  transform: scale(0.97); /* Instant response on press */
+  transition: transform 100ms ease-out;
+}
+
+.hub-media-card:focus-visible {
+  border-color: #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.45);
+}
+
+/* Poster Frame */
+.hub-card-poster-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3; /* Standard Movie Poster Ratio */
+  border-radius: 11px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #161A28 0%, #0E111C 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hub-card-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 320ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-media-card:hover .hub-card-poster-img {
+  transform: scale(1.05); /* Smooth optical zoom */
+}
+
+.hub-card-poster-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  color: #636366;
+  text-align: center;
+}
+
+.hub-fallback-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #A1A1A6;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Top Badges */
+.hub-card-top-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hub-media-type-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.tag-movie {
+  background: rgba(10, 132, 255, 0.45);
+  border: 1px solid rgba(10, 132, 255, 0.6);
+  color: #FFFFFF;
+}
+
+.tag-series {
+  background: rgba(191, 90, 242, 0.45);
+  border: 1px solid rgba(191, 90, 242, 0.6);
+  color: #FFFFFF;
+}
+
+.hub-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFD60A;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.rating-star-icon {
+  fill: #FFD60A;
+  color: #FFD60A;
+}
+
+/* Hover Action Overlay — Vertical Layout */
+.hub-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 22, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column; /* Vertical alignment */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 3;
+}
+
+.hub-media-card:hover .hub-card-hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hub-card-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 33px;
+  width: 116px; /* Uniform width so all buttons match perfectly */
+  padding: 0 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hub-card-action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.04);
+}
+
+.hub-card-action-btn:active {
+  transform: scale(0.95);
+}
+
+.action-details {
+  background: rgba(10, 132, 255, 0.35);
+  border-color: rgba(10, 132, 255, 0.55);
+}
+
+.action-details:hover {
+  background: #0A84FF;
+  border-color: #0A84FF;
+}
+
+.action-bookmark.bookmarked {
+  background: rgba(48, 209, 88, 0.35);
+  border-color: rgba(48, 209, 88, 0.55);
+  color: #30D158;
+}
+
+.action-fav.active-fav {
+  background: rgba(255, 55, 95, 0.35);
+  border-color: rgba(255, 55, 95, 0.6);
+  color: #FF375F;
+}
+
+.action-watched.active-watched {
+  background: rgba(48, 209, 88, 0.35);
+  border-color: rgba(48, 209, 88, 0.6);
+  color: #30D158;
+}
+
+.hub-fav-badge,
+.hub-watched-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  border-radius: 9999px;
+  background: rgba(15, 20, 30, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.action-compare {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.action-compare:hover {
+  background: rgba(100, 210, 255, 0.3);
+  border-color: #70D7FF;
+}
+
+/* Card Body & Typography */
+.hub-card-body {
+  padding: 8px 4px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hub-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #F5F5F7;
+  letter-spacing: -0.015em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hub-card-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8E8E93;
+}
+
+.hub-card-year {
+  font-weight: 500;
+}
+
+.hub-card-lang-chip {
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #AEAEB2;
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   7. Skeletons (Apple Shimmer Waves)
+   ========================================================================== */
+.hub-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 22px 18px;
+  width: 100%;
+}
+
+.hub-skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hub-skeleton-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.hub-skeleton-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 2px;
+}
+
+.hub-skeleton-line {
+  position: relative;
+  height: 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.hub-skeleton-title {
+  width: 75%;
+}
+
+.hub-skeleton-sub {
+  width: 45%;
+}
+
+.shimmer-animation::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: apple-shimmer 1.6s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   8. Empty & Error States (visionOS Frosted Feedback)
+   ========================================================================== */
+.hub-empty-state-card,
+.hub-error-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  margin: 20px auto;
+  max-width: 520px;
+  border-radius: 20px;
+  background: rgba(20, 24, 38, 0.55);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  animation: apple-fade-in 200ms ease-out;
+}
+
+.hub-empty-icon-bubble,
+.hub-error-icon-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hub-empty-icon-bubble {
+  background: rgba(10, 132, 255, 0.15);
+  border: 1px solid rgba(10, 132, 255, 0.35);
+  color: #0A84FF;
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.2);
+}
+
+.hub-error-icon-bubble {
+  background: rgba(255, 69, 58, 0.15);
+  border: 1px solid rgba(255, 69, 58, 0.35);
+  color: #FF453A;
+  box-shadow: 0 0 20px rgba(255, 69, 58, 0.2);
+}
+
+.hub-empty-title,
+.hub-error-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
+}
+
+.hub-empty-desc,
+.hub-error-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #A1A1A6;
+  max-width: 420px;
+  margin: 0 0 20px 0;
+}
+
+.hub-empty-action-btn,
+.hub-error-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.hub-empty-action-btn {
+  background: rgba(10, 132, 255, 0.25);
+  border: 1px solid rgba(10, 132, 255, 0.5);
+  color: #FFFFFF;
+}
+
+.hub-empty-action-btn:hover {
+  background: #0A84FF;
+  box-shadow: 0 0 16px rgba(10, 132, 255, 0.4);
+}
+
+.hub-error-retry-btn {
+  background: rgba(255, 69, 58, 0.25);
+  border: 1px solid rgba(255, 69, 58, 0.5);
+  color: #FFFFFF;
+}
+
+.hub-error-retry-btn:hover {
+  background: #FF453A;
+  box-shadow: 0 0 16px rgba(255, 69, 58, 0.4);
+}
+
+.hub-empty-action-btn:active,
+.hub-error-retry-btn:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   9. Pagination Bar (macOS Floating Capsule Toolbar)
+   ========================================================================== */
+.hub-pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 12px 20px;
+  background: rgba(16, 20, 34, 0.65);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hub-pagination-meta {
+  font-size: 12px;
+  color: #A1A1A6;
+}
+
+.hub-pagination-count strong {
+  color: #FFFFFF;
+}
+
+.hub-total-results {
+  color: #7C7C82;
+}
+
+.hub-pagination-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hub-page-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 29px;
+  padding: 0 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E5E5EA;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-page-nav-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hub-page-nav-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.hub-page-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.hub-page-btn-text {
+  font-size: 11px;
+}
+
+.hub-page-numbers-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 4px;
+}
+
+.hub-page-number-btn {
+  min-width: 29px;
+  height: 29px;
+  padding: 0 6px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #A1A1A6;
+  font-size: 11.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hub-page-number-btn:hover:not(:disabled):not(.active) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.hub-page-number-btn:active {
+  transform: scale(0.94);
+}
+
+.hub-page-number-btn.active {
+  background: #0A84FF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.45);
+}
+
+.hub-page-ellipsis {
+  padding: 0 4px;
+  color: #636366;
+  font-size: 11px;
+  user-select: none;
+}
+
+/* ==========================================================================
+   10. Footer (Apple Subtle Attribution Bar)
+   ========================================================================== */
+.movie-hub-footer {
+  padding: 12px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 13, 22, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #7C7C82;
+  flex-shrink: 0;
+}
+
+.hub-footer-text strong {
+  color: #D1D1D6;
+}
+
+.hub-footer-disclaimer {
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   11. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1150px) {
+  .hub-preferences-text {
+    display: none;
+  }
+  .hub-preferences-trigger-btn {
+    padding: 0 8px;
+    width: 31px;
+    justify-content: center;
+  }
+  .hub-search-slot {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 960px) {
+  .movie-hub-header {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .hub-search-slot {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .hub-filter-row-secondary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .movie-hub-container,
+  .hub-featured-card,
+  .hub-media-card,
+  .hub-seg-btn,
+  .hub-region-pill {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  .shimmer-animation::after {
+    animation: none !important;
+  }
+}

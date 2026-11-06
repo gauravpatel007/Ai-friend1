@@ -1,0 +1,423 @@
+/* ==========================================================================
+   VoicePortal.css — Apple Siri & VisionOS Human Interface Aesthetic
+   ========================================================================== */
+
+.voice-portal-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 6, 12, 0.72);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  animation: portalFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes portalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(28px) saturate(180%);
+  }
+}
+
+.voice-portal-card {
+  position: relative;
+  width: 440px;
+  max-width: 92vw;
+  background: rgba(16, 20, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 36px;
+  padding: 24px 28px 26px;
+  box-shadow:
+    0 32px 84px rgba(0, 0, 0, 0.75),
+    0 8px 32px rgba(10, 132, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  animation: portalCardScale 320ms cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+}
+
+@keyframes portalCardScale {
+  from {
+    transform: scale(0.92) translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ambient Radial Aura Background */
+.portal-ambient-aura {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(75px);
+  opacity: 0.35;
+  transition: all 400ms ease;
+  z-index: 0;
+}
+
+.aura-ready, .aura-idle {
+  background: radial-gradient(circle, rgba(10, 132, 255, 0.5) 0%, rgba(191, 90, 242, 0.25) 50%, transparent 70%);
+}
+
+.aura-listening {
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.7) 0%, rgba(10, 132, 255, 0.4) 50%, transparent 70%);
+  opacity: 0.55;
+}
+
+.aura-transcribing, .aura-thinking {
+  background: radial-gradient(circle, rgba(191, 90, 242, 0.7) 0%, rgba(255, 159, 10, 0.4) 50%, transparent 70%);
+  opacity: 0.5;
+}
+
+.aura-speaking {
+  background: radial-gradient(circle, rgba(48, 209, 88, 0.65) 0%, rgba(0, 229, 255, 0.4) 50%, transparent 70%);
+  opacity: 0.55;
+}
+
+/* 1. Header Bar: Dynamic Island Pill & Close */
+.portal-header-bar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.portal-island-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  padding: 6px 14px 6px 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+.island-avatar-mini {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.island-avatar-mini img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.island-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transition: all 250ms ease;
+}
+
+.island-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #F5F5F7;
+}
+
+.portal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #A1A1A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.portal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  transform: scale(1.06);
+}
+
+/* 2. Concentric Acoustic Rings & Character */
+.portal-visual-stage {
+  position: relative;
+  z-index: 2;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 16px;
+}
+
+.acoustic-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.ring-outer {
+  width: 200px;
+  height: 200px;
+  border: 1.5px solid rgba(191, 90, 242, 0.35);
+  box-shadow: 0 0 24px rgba(191, 90, 242, 0.2);
+  animation: ringPulseOuter 3.2s ease-in-out infinite alternate;
+}
+
+.ring-middle {
+  width: 160px;
+  height: 160px;
+  border: 1.5px solid rgba(10, 132, 255, 0.45);
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.25);
+  animation: ringPulseMiddle 2.6s ease-in-out infinite alternate;
+}
+
+.ring-inner {
+  width: 124px;
+  height: 124px;
+  border: 2px solid rgba(0, 229, 255, 0.65);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+  animation: ringPulseInner 2s ease-in-out infinite alternate;
+}
+
+@keyframes ringPulseOuter {
+  0% { transform: scale(0.96); opacity: 0.35; }
+  100% { transform: scale(1.04); opacity: 0.65; }
+}
+
+@keyframes ringPulseMiddle {
+  0% { transform: scale(1.02); opacity: 0.45; }
+  100% { transform: scale(0.95); opacity: 0.75; }
+}
+
+@keyframes ringPulseInner {
+  0% { transform: scale(0.97); opacity: 0.55; }
+  100% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Pulse variations during active states */
+.pulse-listening.ring-inner {
+  border-color: #00E5FF;
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.85);
+  animation-duration: 0.9s;
+}
+
+.pulse-speaking.ring-inner {
+  border-color: #30D158;
+  box-shadow: 0 0 28px rgba(48, 209, 88, 0.8);
+  animation-duration: 1.1s;
+}
+
+.pulse-thinking.ring-middle {
+  border-color: #BF5AF2;
+  box-shadow: 0 0 28px rgba(191, 90, 242, 0.8);
+  animation-duration: 1.2s;
+}
+
+/* Character Wrap with Smooth 3D Bobbing */
+.portal-character-wrap {
+  position: relative;
+  z-index: 3;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: characterFloat 3.6s ease-in-out infinite;
+}
+
+@keyframes characterFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+.portal-character-img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 16px rgba(10, 132, 255, 0.35));
+}
+
+/* 3. Text Section */
+.portal-text-section {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.portal-status-headline {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.portal-status-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #A1A1A6;
+  max-width: 320px;
+  line-height: 1.45;
+  min-height: 20px;
+}
+
+/* 4. Organic Equalizer Waveform */
+.portal-waveform-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 22px;
+}
+
+.waveform-bar {
+  width: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #00E5FF 0%, #0A84FF 50%, #BF5AF2 100%);
+  transition: height 80ms ease, opacity 200ms ease;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.35);
+}
+
+/* 5. Frosted Glass Action Dock */
+.portal-action-dock {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dock-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dock-btn-subtle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F5F5F7;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.dock-btn-subtle:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.dock-btn-subtle.btn-active-danger {
+  background: rgba(255, 69, 58, 0.2);
+  border-color: rgba(255, 69, 58, 0.4);
+  color: #FF453A;
+}
+
+.dock-btn-mic {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0A84FF 0%, #0066D6 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.45);
+}
+
+.dock-btn-mic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(10, 132, 255, 0.65);
+}
+
+.dock-btn-mic.btn-listening-active {
+  background: linear-gradient(135deg, #00E5FF 0%, #0A84FF 100%);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.8);
+  animation: micListenPulse 1.4s infinite alternate;
+}
+
+@keyframes micListenPulse {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.12); }
+}
+
+.dock-btn-stop {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF453A 0%, #D70015 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(255, 69, 58, 0.45);
+}
+
+.dock-btn-stop:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(255, 69, 58, 0.7);
+}
+
+/* Footer Indicator */
+.portal-footer-pill {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #8E8E93;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pulse-icon {
+  animation: iconBlink 1.8s infinite;
+}
+
+@keyframes iconBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; color: #00E5FF; }
+}
